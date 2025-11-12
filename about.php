@@ -9,7 +9,7 @@
 
 </head>
     <nav id="nav-bar">
-        <a href="index.html"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
+        <a href="index.php"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
           
         <!-- menu bars -->
           <input type="checkbox" id="nav-toggle">
@@ -19,11 +19,11 @@
                 <span></span>
             </label>
         <ul id="nav-menu">
-            <li><a id="nav-link" href="index.html">Home</a></li>
-            <li><a id="nav-link" href="about.html">About</a></li>
-            <li><a id="nav-link" href="jobs.html">Career</a></li>
+            <li><a id="nav-link" href="index.php">Home</a></li>
+            <li><a id="nav-link" href="about.php">About</a></li>
+            <li><a id="nav-link" href="jobs.php">Career</a></li>
             <li><a id="nav-link" href="mailto:info@epasssoftware.com.au">Contact</a></li>
-            <li><a id="nav-link" class="nav-button" href="apply.html">Join us</a></li>
+            <li><a id="nav-link" class="nav-button" href="apply.php">Join us</a></li>
         </ul>
     </nav>
             <!-- Group info using nested lists -->

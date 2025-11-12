@@ -14,7 +14,7 @@
 
 <body>
     <nav id="nav-bar">
-        <a href="index.html"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
+        <a href="index.php"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
           
         <!-- menu bars -->
           <input type="checkbox" id="nav-toggle">
@@ -24,11 +24,11 @@
                 <span></span>
             </label>
         <ul id="nav-menu">
-            <li><a id="nav-link" href="index.html">Home</a></li>
-            <li><a id="nav-link" href="about.html">About</a></li>
-            <li><a id="nav-link" href="jobs.html">Career</a></li>
+            <li><a id="nav-link" href="index.php">Home</a></li>
+            <li><a id="nav-link" href="about.php">About</a></li>
+            <li><a id="nav-link" href="jobs.php">Career</a></li>
             <li><a id="nav-link" href="mailto:info@epasssoftware.com.au">Contact</a></li>
-            <li><a id="nav-link" class="nav-button" href="apply.html">Join us</a></li>
+            <li><a id="nav-link" class="nav-button" href="apply.php">Join us</a></li>
         </ul>
     </nav>
 
@@ -98,7 +98,7 @@
                             <li>Experience with agile development methodologies</li>
                         </ul>
                       </div>
-                    <a href="apply.html" class="apply-btn">Apply Now</a>
+                    <a href="apply.php" class="apply-btn">Apply Now</a>
                 </div>
             </section>
 
@@ -154,7 +154,7 @@
                         <li>Experience in financial services or e-commerce industry</li>
                     </ul>
                 </div>
-                <a href="apply.html" class="apply-btn">Apply Now</a>
+                <a href="apply.php" class="apply-btn">Apply Now</a>
             </section>
 
             <!-- SECTION 3: AI/ML ENGINEER -->
@@ -210,7 +210,7 @@
                         <li>Experience with edge AI and model quantization</li>
                     </ul>
                 </div>
-                <a href="apply.html" class="apply-btn">Apply Now</a>
+                <a href="apply.php" class="apply-btn">Apply Now</a>
             </section>
 
             <!-- SECTION 4: CLOUD ENGINEER -->
@@ -266,7 +266,7 @@
                         <li>Experience with database management in cloud environments</li>
                     </ul>
                 </div>
-                <a href="apply.html" class="apply-btn">Apply Now</a>
+                <a href="apply.php" class="apply-btn">Apply Now</a>
             </section>
         </main>
 
