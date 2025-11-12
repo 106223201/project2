@@ -55,7 +55,7 @@
       <h3>We Believe Computing Power And Data Are The Fuel Of The Future</h3>
         <p>At ePass, we provide software solutions and cloud computing power for your ambitious projects.
         Our team encompasses the spirit of young entrepreneurs and hackers with an undying passion for solving complex problems.</p>
-      <a href="about.html" class="btn">About ePass</a>
+      <a href="about.php" class="btn">About ePass</a>
     </section>
 
   <!-- Featured Jobs Section -->
