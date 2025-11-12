@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'header.inc'; ?>
+    <meta name="keywords" content="Group Information, Table, Responsibilities">
+    <meta name="author" content="Nguyen Tuan Anh">
     <title>About Our Group | Cracked Hackers | COS10026 Web Technology</title>
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/about.css">
 
 </head>
-    <nav id="nav-bar">
-        <a href="index.html"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
-          
-        <!-- menu bars -->
-          <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        <ul id="nav-menu">
-            <li><a id="nav-link" href="index.html">Home</a></li>
-            <li><a id="nav-link" href="about.html">About</a></li>
-            <li><a id="nav-link" href="jobs.html">Career</a></li>
-            <li><a id="nav-link" href="mailto:info@epasssoftware.com.au">Contact</a></li>
-            <li><a id="nav-link" class="nav-button" href="apply.html">Join us</a></li>
-        </ul>
-    </nav>
-            <!-- Group info using nested lists -->
+
+    <?php include 'nav.inc'; ?>
+
+<!-- Group info using nested lists -->
     <body>
         <section id="hero-section">
         <h1>About Our Group</h1>
@@ -150,7 +135,7 @@
 
 <br>
     <footer>
-        <p>&copy; 2025 ePass Software. All rights reserved.</p>
+        <?php include 'footer.inc'; ?>
     </footer>
 
     </body>
