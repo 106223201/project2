@@ -18,12 +18,76 @@
         <p>Explore roles that shape the future of technology.</p>
     </header>
 
-          <br>
-            <!-- SECTION 1: SOFTWARE ENGINEER -->
-          <main>
+        <br>
+        <main> 
+
+        <!-- SECTION 1: DATA ANALYST -->
             <section id="job-box">
                 <input type="checkbox" id="job1" class="job-toggle">
                 <label for="job1" class="job-header">
+                <div class="job-header-content">
+                    <h2>Data Analyst</h2>
+                    <span class="ref-number">Reference: DA24B</span>
+                    <div class="job-meta">
+                        <span>📍 Melbourne</span>
+                        <span>💼 Full-time</span>
+                    </div>
+                    <div class="salary">Salary: $85,000 - $115,000 per year</div>
+                </div>
+                <span class="toggle-icon">▼</span>
+                </label>
+
+                <div class="job-details">
+                    <div class="reports-to">Reports to: Head of Data Analytics</div>
+
+                <div class="job-description">
+                    <p>Join our data team to transform complex datasets into actionable insights that drive business decisions. You will work closely with stakeholders across the organization to understand their needs and deliver data-driven solutions.</p>
+                </div>
+
+                <div class="job-content">
+                    <h3>Key Responsibilities</h3>
+                    <ol>
+                        <li>Collect, process, and analyze large datasets to identify trends and patterns</li>
+                        <li>Create and maintain interactive dashboards and reports for stakeholders</li>
+                        <li>Perform statistical analysis and develop predictive models</li>
+                        <li>Collaborate with business teams to understand data requirements and KPIs</li>
+                        <li>Present findings and recommendations to senior leadership</li>
+                        <li>Ensure data quality and integrity across reporting systems</li>
+                    </ol>
+
+                    <h3>Required Qualifications, Skills, and Attributes</h3>
+                    
+                    <h4>Essential</h4>
+                    <ul>
+                        <li>Bachelor's degree in Statistics, Mathematics, Economics, or related field</li>
+                        <li>2+ years of experience in data analysis or business intelligence</li>
+                        <li>Advanced proficiency in SQL for data extraction and manipulation</li>
+                        <li>Experience with data visualization tools (Tableau, Power BI, or Looker)</li>
+                        <li>Strong knowledge of Python or R for statistical analysis</li>
+                        <li>Understanding of statistical methods and A/B testing</li>
+                        <li>Excellent analytical and problem-solving skills</li>
+                        <li>Strong communication skills with ability to explain complex data to non-technical audiences</li>
+                    </ul>
+
+                    <h4>Preferable</h4>
+                    <ul>
+                        <li>Master's degree in Data Science, Statistics, or related field</li>
+                        <li>Experience with big data technologies (Hadoop, Spark)</li>
+                        <li>Knowledge of machine learning algorithms and frameworks</li>
+                        <li>Experience with cloud data platforms (Snowflake, BigQuery, Redshift)</li>
+                        <li>Familiarity with ETL processes and data warehousing concepts</li>
+                        <li>Experience in financial services or e-commerce industry</li>
+                    </ul>
+                </div>
+                <a href="apply.php" class="apply-btn">Apply Now</a>
+            </div>
+        </section>
+
+            <!-- SECTION 2: SOFTWARE ENGINEER -->
+        
+            <section id="job-box">
+                <input type="checkbox" id="job2" class="job-toggle">
+                <label for="job2" class="job-header">
                     <div class="job-header-content">
                         <h2>Software Engineer</h2>
                         <span class="ref-number">Reference: SE24A</span>
@@ -33,6 +97,7 @@
                         </div>
                         <div class="salary">Salary: $120,000 - $160,000 per year</div>
                     </div>
+                    <span class="toggle-icon">▼</span>
                 </label>
 
                 <div class="job-details">
@@ -82,64 +147,12 @@
                 </div>
             </section>
 
-            <!-- SECTION 2: DATA ANALYST -->
-            <section id="job-box">
-                <div class="job-header">
-                    <h2>Data Analyst</h2>
-                    <span class="ref-number">Reference: DA24B</span>
-                    <div class="job-meta">
-                        <span>📍 Melbourne</span>
-                        <span>💼 Full-time</span>
-                    </div>
-                    <div class="salary">Salary: $85,000 - $115,000 per year</div>
-                    <div class="reports-to">Reports to: Head of Data Analytics</div>
-                </div>
-
-                <div class="job-description">
-                    <p>Join our data team to transform complex datasets into actionable insights that drive business decisions. You will work closely with stakeholders across the organization to understand their needs and deliver data-driven solutions.</p>
-                </div>
-
-                <div class="job-content">
-                    <h3>Key Responsibilities</h3>
-                    <ol>
-                        <li>Collect, process, and analyze large datasets to identify trends and patterns</li>
-                        <li>Create and maintain interactive dashboards and reports for stakeholders</li>
-                        <li>Perform statistical analysis and develop predictive models</li>
-                        <li>Collaborate with business teams to understand data requirements and KPIs</li>
-                        <li>Present findings and recommendations to senior leadership</li>
-                        <li>Ensure data quality and integrity across reporting systems</li>
-                    </ol>
-
-                    <h3>Required Qualifications, Skills, and Attributes</h3>
-                    
-                    <h4>Essential</h4>
-                    <ul>
-                        <li>Bachelor's degree in Statistics, Mathematics, Economics, or related field</li>
-                        <li>2+ years of experience in data analysis or business intelligence</li>
-                        <li>Advanced proficiency in SQL for data extraction and manipulation</li>
-                        <li>Experience with data visualization tools (Tableau, Power BI, or Looker)</li>
-                        <li>Strong knowledge of Python or R for statistical analysis</li>
-                        <li>Understanding of statistical methods and A/B testing</li>
-                        <li>Excellent analytical and problem-solving skills</li>
-                        <li>Strong communication skills with ability to explain complex data to non-technical audiences</li>
-                    </ul>
-
-                    <h4>Preferable</h4>
-                    <ul>
-                        <li>Master's degree in Data Science, Statistics, or related field</li>
-                        <li>Experience with big data technologies (Hadoop, Spark)</li>
-                        <li>Knowledge of machine learning algorithms and frameworks</li>
-                        <li>Experience with cloud data platforms (Snowflake, BigQuery, Redshift)</li>
-                        <li>Familiarity with ETL processes and data warehousing concepts</li>
-                        <li>Experience in financial services or e-commerce industry</li>
-                    </ul>
-                </div>
-                <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
 
             <!-- SECTION 3: AI/ML ENGINEER -->
             <section id="job-box">
-                <div class="job-header">
+                <input type="checkbox" id="job3" class="job-toggle">
+                <label for="job3" class="job-header">
+                <div class="job-header-content">
                     <h2>AI/ML Engineer</h2>
                     <span class="ref-number">Reference: ML24C</span>
                     <div class="job-meta">
@@ -147,9 +160,12 @@
                         <span>💼 Full-time</span>
                     </div>
                     <div class="salary">Salary: $140,000 - $190,000 per year</div>
-                    <div class="reports-to">Reports to: Director of AI Research</div>
                 </div>
+                <span class="toggle-icon">▼</span>
+                </label>
 
+                <div class="job-details">
+                    <div class="reports-to">Reports to: Director of AI Research</div>
                 <div class="job-description">
                     <p>We're looking for an experienced AI/ML Engineer to develop and deploy cutting-edge machine learning models. You will research, design, and implement AI solutions that enhance our products and create new capabilities for our users.</p>
                 </div>
@@ -191,11 +207,14 @@
                     </ul>
                 </div>
                 <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
+            </div>
+        </section>
 
             <!-- SECTION 4: CLOUD ENGINEER -->
-            <section id="job-box">
-                <div class="job-header">
+        <section id="job-box">
+            <input type="checkbox" id="job4" class="job-toggle">
+            <label for="job4" class="job-header">
+                <div class="job-header-content">
                     <h2>Cloud Engineer</h2>
                     <span class="ref-number">Reference: CE24D</span>
                     <div class="job-meta">
@@ -203,9 +222,12 @@
                         <span>💼 Full-time</span>
                     </div>
                     <div class="salary">Salary: $110,000 - $145,000 per year</div>
-                    <div class="reports-to">Reports to: Cloud Infrastructure Lead</div>
                 </div>
+                <span class="toggle-icon">▼</span>
+                </label>
 
+                <div class="job-details">
+                    <div class="reports-to">Reports to: Cloud Infrastructure Lead</div>
                 <div class="job-description">
                     <p>As a Cloud Engineer, you will design, implement, and manage our cloud infrastructure to ensure high availability, security, and cost-efficiency. You will work with development teams to architect scalable cloud solutions that support our growing platform.</p>
                 </div>
@@ -247,8 +269,10 @@
                     </ul>
                 </div>
                 <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
+
 
         <!-- ASIDE: WHY EPASS -->
         <aside class="float-item">
@@ -291,13 +315,12 @@
             </div>
         </aside>
 
-      <br>
+        <br>
 
   <!-- Job descriptions were generated by ChatGPT -->
 
-    <footer>
-        <?php include 'footer.inc'; ?>
-    </footer>
 
 </body>
+    <?php include 'footer.inc'; ?>
+
 </html>
