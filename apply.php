@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +27,11 @@
             <h2>Application form</h2>
             <section id="job-reference">
                 <label for="refnum">Job Reference Numbers</label>
-                <select name="number" id="refnum">
-                    <option value="software-engineer">SE24A</option>
-                    <option value="data-analyst">DA24B</option>
-                    <option value="aiml-engineer">ML24C</option>
-                    <option value="cloud-engineer">CE24D</option>
+                <select name="reflist[]" id="refnum">
+                    <option value="SE24A">SE24A (Software Engineer)</option>
+                    <option value="DA24B">DA24B (Data Analyst)</option>
+                    <option value="ML24C">ML24C (AIML Engineer)</option>
+                    <option value="CE24D">CE24D (Cloud Engineer)</option>
                 </select>
             </section>
             <section id="general">
@@ -110,14 +113,14 @@
                     <label for="techlist">Required Technical List</label>
                     <section id="skill-cols">
                         <section id="skill-col-1">
-                            <p><input type="checkbox" name="skills[]" value="python" id="programming" required><label for="programming">Python Programming Language</label></p>
+                            <p><input type="checkbox" name="skills[]" value="python_programming_language" id="programming" required><label for="programming">Python Programming Language</label></p>
                             <p><input type="checkbox" name="skills[]" value="data_science" id="datasc"><label for="datasc">Data Science</label></p>
                             <p><input type="checkbox" name="skills[]" value="cyber_security" id="cysec"><label for="cysec">Cyber Security</label></p>
                         </section>
                         <section id="skill-col-2">
-                            <p><input type="checkbox" name="skills[]" value="management" id="project"><label for="project">Project Management</label></p>
-                            <p><input type="checkbox" name="skills[]" value="software" id="Software"><label for="Software">Software Development</label></p>
-                            <p><input type="checkbox" name="skills[]" value="tech_writing" id="techwriting"><label for="techwriting">Technical Writing</label></p>
+                            <p><input type="checkbox" name="skills[]" value="project_management" id="project"><label for="project">Project Management</label></p>
+                            <p><input type="checkbox" name="skills[]" value="software_development" id="Software"><label for="Software">Software Development</label></p>
+                            <p><input type="checkbox" name="skills[]" value="technical_writing" id="techwriting"><label for="techwriting">Technical Writing</label></p>
                         </section>
                     </section>
                 </section>
@@ -125,7 +128,7 @@
                     <label for="otherskill">Other Skills</label>
                     <textarea name="skill" id="otherskill"></textarea>
                 </section>
-                <input type="submit" name="save_record" value="Apply" id="submit">
+                <button id="submit" name="save_record">Submit</button>
             </section>
         </form>
     </section>
