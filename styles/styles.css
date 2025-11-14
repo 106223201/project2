@@ -1,4 +1,12 @@
-/* Kenzie Nguyen - COS10026 - S1 2025 - SeekJobs Project */
+/*
+author: Kenzie Duong Nguyen
+
+created: 5/10/2025
+
+last modified: 14/11/2025
+
+description: css for index.php page
+*/
 
 /*IMPORT FONT*/
 @font-face {
@@ -48,8 +56,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 60px;
 }
 

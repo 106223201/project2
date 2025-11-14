@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'header.inc'; ?>
     <meta name="keywords" content="HTML, Form, Jobs">
     <meta name="author" content="Luu Tri Khoa Tung">
-    <link rel="stylesheet" href="styles/apply.css">
-    <link rel="stylesheet" href="styles/styles.css">
     <title>Job Application Page</title>
+    <link rel="stylesheet" href="styles/apply.css">
+
 </head>
 <body>
-    <nav id="nav-bar">
-        <a href="index.html"><img class="logo" src ="images/logo.png" alt ="logo"></a></li>
-          
-        <!-- menu bars -->
-          <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        <ul id="nav-menu">
-            <li><a id="nav-link" href="index.html">Home</a></li>
-            <li><a id="nav-link" href="about.html">About</a></li>
-            <li><a id="nav-link" href="jobs.html">Career</a></li>
-            <li><a id="nav-link" href="mailto:info@epasssoftware.com.au">Contact</a></li>
-            <li><a id="nav-link" class="nav-button" href="apply.html">Join us</a></li>
-        </ul>
-    </nav>
 
+    <?php include 'nav.inc'; ?>
     <header>
         <h1>Career Opportunities in Australia</h1>
         <p>Explore roles that shape the future of technology.</p>
@@ -148,9 +130,8 @@
         </form>
     </section>
 
-    <!-- footer -->
     <footer>
-      <p>&copy; 2025 ePass Software. All rights reserved.</p>
+        <?php include 'footer.inc'; ?>
     </footer>
 </body>
 </html>
