@@ -1,3 +1,87 @@
+
+
+<?php
+session_start();
+// // 1. LOGIN CHECKING FOR MANAGER
+// if (!isset($_SESSION["manager_logged_in"]) || $_SESSION["manager_logged_in"] !== true) {
+//     header("Location: manager_login.php");
+//     exit();
+// }
+// 2. DATABASE CONNECTION
+require_once("settings.php");
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+
+
+// 3. DELETE EOI THEO JOBREF
+$delete_message = "";
+if (isset($_POST["delete_btn"])) {
+    $jobref = trim($_POST["delete_jobref"]);
+    if ($jobref !== "") {
+        $query = "DELETE FROM eoi WHERE jobref='$jobref'";
+        if (mysqli_query($conn, $query)) {
+            $delete_message = "Deleted all EOIs with Job Reference: $jobref";
+        } else {
+            $delete_message = "Error deleting: " . mysqli_error($conn);
+        }
+    }
+}
+
+// 4. UPDATE STATUS
+$update_message = "";
+if (isset($_POST["update_btn"])) {
+    $eoinumber = trim($_POST["eoi_number"]);
+    $status = trim($_POST["new_status"]);
+
+    if ($eoinumber != "" && $status != "") {
+        $query = "UPDATE eoi SET status='$status' WHERE EOInumber='$eoinumber'";
+        if (mysqli_query($conn, $query)) {
+            $update_message = "EOI #$eoinumber updated to status: $status";
+        } else {
+            $update_message = "Error updating status: " . mysqli_error($conn);
+        }
+    }
+}
+
+// 5. SEARCH + SORT
+$where = " WHERE 1 "; 
+
+// Filter based on jobref
+if (!empty($_GET["search_jobref"])) {
+    $jobref = trim($_GET["search_jobref"]);
+    $where .= " AND jobref='$jobref' ";
+}
+
+// Filter based on firstname
+if (!empty($_GET["search_firstname"])) {
+    $firstname = trim($_GET["search_firstname"]);
+    $where .= " AND Fname LIKE '%$firstname%' ";
+}
+
+// Filter based on lastname
+if (!empty($_GET["search_lastname"])) {
+    $lastname = trim($_GET["search_lastname"]);
+    $where .= " AND Lname LIKE '%$lastname%' ";
+}
+
+// Sorting by criteria
+$sort = "";
+if (!empty($_GET["sortby"])) {
+    $sortby = $_GET["sortby"];
+    $allowed = ["EOInumber", "Fname", "Lname", "jobref", "status"];
+    if (in_array($sortby, $allowed)) {
+        $sort = " ORDER BY $sortby ASC";
+    }
+}
+
+// 6. LAST QUERY FOR LIST
+$query = "SELECT * FROM eoi $where $sort";
+$result = mysqli_query($conn, $query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,103 +170,6 @@
     }
     ?>
 </table>
-
-</body>
-</html>
-
-<?php
-session_start();
-// 1. LOGIN CHECKING FOR MANAGER
-if (!isset($_SESSION["manager_logged_in"]) || $_SESSION["manager_logged_in"] !== true) {
-    header("Location: manager_login.php");
-    exit();
-}
-// 2. DATABASE CONNECTION
-require_once("settings.php");
-$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
-
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-
-
-// 3. DELETE EOI THEO JOBREF
-$delete_message = "";
-if (isset($_POST["delete_btn"])) {
-    $jobref = trim($_POST["delete_jobref"]);
-    if ($jobref !== "") {
-        $query = "DELETE FROM eoi WHERE jobref='$jobref'";
-        if (mysqli_query($conn, $query)) {
-            $delete_message = "Deleted all EOIs with Job Reference: $jobref";
-        } else {
-            $delete_message = "Error deleting: " . mysqli_error($conn);
-        }
-    }
-}
-
-// 4. UPDATE STATUS
-$update_message = "";
-if (isset($_POST["update_btn"])) {
-    $eoinumber = trim($_POST["eoi_number"]);
-    $status = trim($_POST["new_status"]);
-
-    if ($eoinumber != "" && $status != "") {
-        $query = "UPDATE eoi SET status='$status' WHERE EOInumber='$eoinumber'";
-        if (mysqli_query($conn, $query)) {
-            $update_message = "EOI #$eoinumber updated to status: $status";
-        } else {
-            $update_message = "Error updating status: " . mysqli_error($conn);
-        }
-    }
-}
-
-// 5. SEARCH + SORT
-$where = " WHERE 1 "; 
-
-// Filter based on jobref
-if (!empty($_GET["search_jobref"])) {
-    $jobref = trim($_GET["search_jobref"]);
-    $where .= " AND jobref='$jobref' ";
-}
-
-// Filter based on firstname
-if (!empty($_GET["search_firstname"])) {
-    $firstname = trim($_GET["search_firstname"]);
-    $where .= " AND Fname LIKE '%$firstname%' ";
-}
-
-// Filter based on lastname
-if (!empty($_GET["search_lastname"])) {
-    $lastname = trim($_GET["search_lastname"]);
-    $where .= " AND Lname LIKE '%$lastname%' ";
-}
-
-// Sorting by criteria
-$sort = "";
-if (!empty($_GET["sortby"])) {
-    $sortby = $_GET["sortby"];
-    $allowed = ["EOInumber", "Fname", "Lname", "jobref", "status"];
-    if (in_array($sortby, $allowed)) {
-        $sort = " ORDER BY $sortby ASC";
-    }
-}
-
-// 6. LAST QUERY FOR LIST
-$query = "SELECT * FROM eoi $where $sort";
-$result = mysqli_query($conn, $query);
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPASS</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-</head>
-<body>
 
 </body>
 </html>
