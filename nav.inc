@@ -7,7 +7,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </label>
+            </label>       
         <ul id="nav-menu">
             <li><a id="nav-link" href="index.php">Home</a></li>
             <li><a id="nav-link" href="about.php">About</a></li>
