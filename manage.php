@@ -92,16 +92,12 @@
 
 <?php
 session_start();
-// ========================================
 // 1. LOGIN CHECKING FOR MANAGER
-// ========================================
 if (!isset($_SESSION["manager_logged_in"]) || $_SESSION["manager_logged_in"] !== true) {
     header("Location: manager_login.php");
     exit();
 }
-// ========================================
 // 2. DATABASE CONNECTION
-// ========================================
 require_once("settings.php");
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
@@ -109,9 +105,8 @@ if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
 }
 
-// ========================================
-// 3. XỬ LÝ DELETE EOI THEO JOBREF
-// ========================================
+
+// 3. DELETE EOI THEO JOBREF
 $delete_message = "";
 if (isset($_POST["delete_btn"])) {
     $jobref = trim($_POST["delete_jobref"]);
@@ -125,9 +120,7 @@ if (isset($_POST["delete_btn"])) {
     }
 }
 
-// ========================================
 // 4. UPDATE STATUS
-// ========================================
 $update_message = "";
 if (isset($_POST["update_btn"])) {
     $eoinumber = trim($_POST["eoi_number"]);
@@ -143,42 +136,38 @@ if (isset($_POST["update_btn"])) {
     }
 }
 
-// ========================================
 // 5. SEARCH + SORT
-// ========================================
-$where = " WHERE 1 "; // mặc định luôn đúng để ghép điều kiện phía sau
+$where = " WHERE 1 "; 
 
-// lọc theo jobref
+// jobref sorting
 if (!empty($_GET["search_jobref"])) {
     $jobref = trim($_GET["search_jobref"]);
     $where .= " AND jobref='$jobref' ";
 }
 
-// lọc theo firstname
+// firstname sorting
 if (!empty($_GET["search_firstname"])) {
     $firstname = trim($_GET["search_firstname"]);
-    $where .= " AND firstname LIKE '%$firstname%' ";
+    $where .= " AND Fname LIKE '%$firstname%' ";
 }
 
-// lọc theo lastname
+// lastname sorting
 if (!empty($_GET["search_lastname"])) {
     $lastname = trim($_GET["search_lastname"]);
-    $where .= " AND lastname LIKE '%$lastname%' ";
+    $where .= " AND Lname LIKE '%$lastname%' ";
 }
 
-// Sắp xếp
+// Sorting
 $sort = "";
 if (!empty($_GET["sortby"])) {
     $sortby = $_GET["sortby"];
-    $allowed = ["EOInumber", "firstname", "lastname", "jobref", "status"];
+    $allowed = ["EOInumber", "Fname", "Lname", "jobref", "status"];
     if (in_array($sortby, $allowed)) {
         $sort = " ORDER BY $sortby ASC";
     }
 }
 
-// ========================================
-// 6. QUERY CUỐI CHO DANH SÁCH
-// ========================================
+// 6. LAST QUERRY FOR LISTING
 $query = "SELECT * FROM eoi $where $sort";
 $result = mysqli_query($conn, $query);
 
