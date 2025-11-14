@@ -20,7 +20,7 @@
     <br>
 
     <section id="apply-form">
-        <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <form method="post" action="process_eoi.php">
             <h2>Application form</h2>
             <section id="job-reference">
                 <label for="refnum">Job Reference Numbers</label>
@@ -77,7 +77,7 @@
                 <section id="state-general">
                     <section id="state-selection">
                         <label for="state">State</label>
-                        <select name="statelist" id="state">
+                        <select name="statelist[]" id="state">
                             <option value="VIC">VIC (Victoria)</option>
                             <option value="NSW">NSW (New South Wales)</option>
                             <option value="QLD">QLD (Queensland)</option>
@@ -110,14 +110,14 @@
                     <label for="techlist">Required Technical List</label>
                     <section id="skill-cols">
                         <section id="skill-col-1">
-                            <p><input type="checkbox" name="prg" id="programming" required><label for="programming">Python Programming Language</label></p>
-                            <p><input type="checkbox" name="data" id="datasc"><label for="datasc">Data Science</label></p>
-                            <p><input type="checkbox" name="cysec" id="cysec"><label for="cysec">Cyber Security</label></p>
+                            <p><input type="checkbox" name="skills[]" value="python" id="programming" required><label for="programming">Python Programming Language</label></p>
+                            <p><input type="checkbox" name="skills[]" value="data_science" id="datasc"><label for="datasc">Data Science</label></p>
+                            <p><input type="checkbox" name="skills[]" value="cyber_security" id="cysec"><label for="cysec">Cyber Security</label></p>
                         </section>
                         <section id="skill-col-2">
-                            <p><input type="checkbox" name="manage" id="project"><label for="project">Project Management</label></p>
-                            <p><input type="checkbox" name="soft" id="Software"><label for="Software">Software Development</label></p>
-                            <p><input type="checkbox" name="writing" id="techwriting"><label for="techwriting">Technical Writing</label></p>
+                            <p><input type="checkbox" name="skills[]" value="management" id="project"><label for="project">Project Management</label></p>
+                            <p><input type="checkbox" name="skills[]" value="software" id="Software"><label for="Software">Software Development</label></p>
+                            <p><input type="checkbox" name="skills[]" value="tech_writing" id="techwriting"><label for="techwriting">Technical Writing</label></p>
                         </section>
                     </section>
                 </section>
@@ -125,7 +125,7 @@
                     <label for="otherskill">Other Skills</label>
                     <textarea name="skill" id="otherskill"></textarea>
                 </section>
-                <input type="submit" value="Apply" id="submit">
+                <input type="submit" name="save_record" value="Apply" id="submit">
             </section>
         </form>
     </section>
