@@ -1,16 +1,15 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta name="keywords" content="HTML, Form, Login, Register">
+    <meta name="author" content="Luu Tri Khoa Tung">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles/login-register.css">
     <title>Login - Register Page</title>
 </head>
 
 <body>
-    
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form method="post" action="process-register.php">
