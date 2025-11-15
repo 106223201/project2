@@ -1,5 +1,5 @@
 <?php
-    require_once('setting.php');
+    require_once('settings.php');
     session_start();
     $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
