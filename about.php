@@ -134,9 +134,7 @@
 </table>
 
 <br>
-    <footer>
-        <?php include 'footer.inc'; ?>
-    </footer>
+</body>
+    <?php include 'footer.inc'; ?>
 
-    </body>
 </html>

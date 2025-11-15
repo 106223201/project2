@@ -11,8 +11,9 @@
         <ul id="nav-menu">
             <li><a id="nav-link" href="index.php">Home</a></li>
             <li><a id="nav-link" href="about.php">About</a></li>
-            <li><a id="nav-link" href="jobs.php">Career</a></li>
+            <li><a id="nav-link" href="jobs.php">Careers</a></li>
             <li><a id="nav-link" href="mailto:info@epasssoftware.com.au">Contact</a></li>
-            <li><a id="nav-link" class="nav-button" href="apply.php">Join us</a></li>
+            <li><a id="nav-link" href="apply.php">Apply</a></li>
+            <li><a id="nav-link" href="login-register.php">Sign in</a></li>
         </ul>
     </nav>

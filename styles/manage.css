@@ -1,0 +1,249 @@
+/*
+author: Nguyen Tuan Anh
+
+created: 14/11/2025
+
+last modified: 15/11/2025
+
+description: css for manage.php page
+*/
+
+/*IMPORT FONT*/
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham-Bold.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('fonts/Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+     url('fonts/Gotham-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('fonts/Gotham-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 700;
+   font-style: normal;
+ }
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('fonts/Gotham-Medium.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('fonts/Gotham-Medium.woff') format('woff'), /* Modern Browsers */
+     url('fonts/Gotham-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('fonts/Gotham-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 400;
+   font-style: normal;
+ }
+
+@font-face {
+  font-family: 'Gotham Thin';
+  src: url('fonts/Gotham-Thin.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('fonts/Gotham-Thin.woff') format('woff'), /* Modern Browsers */
+     url('fonts/Gotham-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('fonts/Gotham-Thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 300;
+   font-style: normal;
+ }
+
+   /* Root Variables */
+:root {
+    --background: #f1f3f8;
+    --card: #ffffffcc;
+    --primary: #2f386a;
+    --primary-hover: 2f386a;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --glass: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --trans: 0.25s ease;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+   /* Body & Layout */
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #c7d2fe 100%);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Page container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+   /* Page Header */
+h1 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+   /* Card (Glass Effect) */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(22px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 22px;
+    transition: var(--trans);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+
+   /* Labels + Inputs */
+label {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    display: block;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: var(--radius);
+    border: 1px solid #cdd3df;
+    background: #ffffff;
+    font-size: 15px;
+    transition: var(--trans);
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.18);
+}
+
+   /* Buttons */
+
+.btn {
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--trans);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+   /* Messages */
+.msg {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.msg.success {
+    background: #ecfdf5;
+    color: var(--success);
+    border-left: 5px solid var(--success);
+}
+
+.msg.error {
+    background: #fef2f2;
+    color: var(--danger);
+    border-left: 5px solid var(--danger);
+}
+
+   /* Forms - Flex Layout */
+.form-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.field {
+    flex: 1;
+    min-width: 220px;
+}
+
+   /* Table Styles */ */
+.table-wrap {
+    background: var(--glass);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #eef2ff;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+tbody tr {
+    background: white;
+    transition: var(--trans);
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody td {
+    padding: 14px;
+    font-size: 15px;
+    color: var(--text-dark);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Status badge */
+.badge {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 999px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-new { background: #fef3c7; color: #92400e; }
+.status-current { background: #dcfce7; color: #166534; }
+.status-final { background: #e0e7ff; color: #3730a3; }
+
+   /* Responsive Design */
+@media (max-width: 780px) {
+    .form-row { flex-direction: column; }
+    body { padding: 16px; }
+    h1 { font-size: 26px; }
+}

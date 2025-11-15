@@ -133,8 +133,7 @@
         </form>
     </section>
 
-    <footer>
-        <?php include 'footer.inc'; ?>
-    </footer>
 </body>
+    <?php include 'footer.inc'; ?>
+
 </html>
