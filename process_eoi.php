@@ -2,6 +2,10 @@
     session_start();
     require_once('settings.php');
 
+    function sanitizeInput($data) {
+        return htmlspecialchars(stripslashes(trim($data)));
+    }
+
     // Prevent direct access - redirect if form wasn't submitted
     if (!isset($_POST['save_record'])) {
     header("Location: apply.php");
@@ -14,16 +18,16 @@
     if (isset($_POST['save_record'])) {
     
         $jobref = $_POST['reflist'];
-        $firstname = $_POST['first'];
-        $lastname = $_POST['last'];
-        $street = $_POST['strtadd'];
-        $suburb = $_POST['subtown'];
+        $firstname = sanitizeInput($_POST['first']);
+        $lastname = sanitizeInput($_POST['last']);
+        $street = sanitizeInput($_POST['strtadd']);
+        $suburb = sanitizeInput($_POST['subtown']);
         $state = $_POST['statelist'];
-        $postcode = $_POST['postalcode'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
+        $postcode = sanitizeInput($_POST['postalcode']);
+        $email = sanitizeInput($_POST['email']);
+        $phone = sanitizeInput($_POST['phone']);
         $skills = $_POST['skills'];
-        $otherskills = $_POST['skill'];
+        $otherskills = sanitizeInput($_POST['skill']);
 
         $state_select = implode($state);
         $jobref_select = implode($jobref);
