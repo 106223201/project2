@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form method="post" action="process-register.php">
