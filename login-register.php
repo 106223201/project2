@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles/login-register.css">
     <title>Login - Register Page</title>
+    <a href="index.php"><img class="logo" src ="images/logo.png" alt ="logo"></a>
+    <br><br>
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registeration</span>
-                <input type="text" name="username" placeholder="Name" required pattern="[A-Za-z]{1,20}">
+                <input type="text" name="username" placeholder="Username" required pattern="[A-Za-z]{1,20}">
                 <input type="email" name="email" placeholder="Email" required pattern="^[A-Za-z0-9]+([._-][A-Za-z0-9]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[a-z]{2,}$">
                 <input type="password" name="password" placeholder="Password" required pattern=".{8,}">
                 <button name="signup">Sign Up</button>
@@ -63,4 +65,7 @@
     <script src="login-register.js"></script>
 </body>
 
-</html>
+<br><br>
+    <p> &copy; 2025 ePass Software. All rights reserved.</p>
+
+    </html>

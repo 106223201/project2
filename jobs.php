@@ -25,38 +25,54 @@
         // Database connection
         require_once 'settings.php'; // You'll need to create this file
         
-        try {
             // Fetch all jobs
             $sql = "SELECT * FROM jobs ORDER BY job_id";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $jobs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
+                    $result = mysqli_query($conn, $sql);
+        
+        if ($result && mysqli_num_rows($result) > 0) {
             $jobCounter = 1;
             
-            foreach ($jobs as $job) {
+            while ($job = mysqli_fetch_assoc($result)) {
                 $jobId = $job['job_id'];
                 
                 // Fetch responsibilities for this job
                 $sqlResp = "SELECT responsibility_text FROM job_responsibilities 
                            WHERE job_id = ? ORDER BY display_order";
-                $stmtResp = $conn->prepare($sqlResp);
-                $stmtResp->execute([$jobId]);
-                $responsibilities = $stmtResp->fetchAll(PDO::FETCH_COLUMN);
+                $stmtResp = mysqli_prepare($conn, $sqlResp);
+                mysqli_stmt_bind_param($stmtResp, "i", $jobId);
+                mysqli_stmt_execute($stmtResp);
+                $resultResp = mysqli_stmt_get_result($stmtResp);
+                $responsibilities = [];
+                while ($row = mysqli_fetch_assoc($resultResp)) {
+                    $responsibilities[] = $row['responsibility_text'];
+                }
+                mysqli_stmt_close($stmtResp);
                 
                 // Fetch essential qualifications
                 $sqlEssential = "SELECT qualification_text FROM job_qualifications 
                                 WHERE job_id = ? AND is_essential = TRUE ORDER BY display_order";
-                $stmtEssential = $conn->prepare($sqlEssential);
-                $stmtEssential->execute([$jobId]);
-                $essentialQuals = $stmtEssential->fetchAll(PDO::FETCH_COLUMN);
+                $stmtEssential = mysqli_prepare($conn, $sqlEssential);
+                mysqli_stmt_bind_param($stmtEssential, "i", $jobId);
+                mysqli_stmt_execute($stmtEssential);
+                $resultEssential = mysqli_stmt_get_result($stmtEssential);
+                $essentialQuals = [];
+                while ($row = mysqli_fetch_assoc($resultEssential)) {
+                    $essentialQuals[] = $row['qualification_text'];
+                }
+                mysqli_stmt_close($stmtEssential);
                 
                 // Fetch preferable qualifications
                 $sqlPreferable = "SELECT qualification_text FROM job_qualifications 
                                  WHERE job_id = ? AND is_essential = FALSE ORDER BY display_order";
-                $stmtPreferable = $conn->prepare($sqlPreferable);
-                $stmtPreferable->execute([$jobId]);
-                $preferableQuals = $stmtPreferable->fetchAll(PDO::FETCH_COLUMN);
+                $stmtPreferable = mysqli_prepare($conn, $sqlPreferable);
+                mysqli_stmt_bind_param($stmtPreferable, "i", $jobId);
+                mysqli_stmt_execute($stmtPreferable);
+                $resultPreferable = mysqli_stmt_get_result($stmtPreferable);
+                $preferableQuals = [];
+                while ($row = mysqli_fetch_assoc($resultPreferable)) {
+                    $preferableQuals[] = $row['qualification_text'];
+                }
+                mysqli_stmt_close($stmtPreferable);
                 
                 // Format salary
                 $salaryFormatted = '$' . number_format($job['salary_min']) . ' - $' . 
@@ -126,13 +142,18 @@
                 
                 $jobCounter++;
             }
-            
-        } catch (PDOException $e) {
+        } else {
             echo '<p class="error">Error loading job listings. Please try again later.</p>';
-            error_log("Database error: " . $e->getMessage());
+            if (mysqli_error($conn)) {
+                error_log("Database error: " . mysqli_error($conn));
+            }
         }
+        
+        // Close connection
+        mysqli_close($conn);
         ?>
-    </main>
+        </main>
+
 
 
         <!-- ASIDE: WHY EPASS -->
