@@ -103,7 +103,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form method="post" action="">
+            <form method="post" action="" novalidate="novalidate">
                 <h1>Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -121,7 +121,7 @@
         </div>
         
         <div class="form-container sign-in">
-            <form method="post" action="">
+            <form method="post" action="" novalidate="novalidate">
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
