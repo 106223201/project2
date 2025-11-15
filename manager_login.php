@@ -17,7 +17,7 @@
 <body>
 
 <h2>Manager Login</h2>
-<p class="error"><?= $login_error ?></p>
+<p class="error"><?php $login_error ?></p>
 
 <form method="post">
     <label>Username:</label>
