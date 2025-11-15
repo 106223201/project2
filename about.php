@@ -57,7 +57,7 @@
                 <dt>Luu Tri Khoa Tung</dt>
                 <dd>Job Application Page, and Home Page (HTML & CSS), process_eoi.php</dd>
                 <dt>Nguyen Tuan Anh</dt>
-                <dd>About page (HTML & CSS), manage.php</dd>
+                <dd>About page (HTML & CSS), Manage Page (PHP & CSS)</dd>
             </dl>
         </div>
         <!-- Group photo -->
