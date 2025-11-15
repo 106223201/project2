@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2025 at 09:06 AM
+-- Generation Time: Nov 15, 2025 at 08:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,7 +48,8 @@ CREATE TABLE `eoi` (
 --
 
 INSERT INTO `eoi` (`EOInumber`, `jobref`, `Fname`, `Lname`, `street`, `suburbtown`, `state`, `postcode`, `email`, `phone`, `skills`, `otherskills`, `status`) VALUES
-(1, 'SE24A', 'tung', 'luu', 'hht', 'hn', 'VIC', '1000', 't@gmail.com', '123456789', 'python_programming_language, data_science, cyber_security, software_development', 'test', 'New');
+(2, 'SE24A', 'tung', 'luu', 'hht', 'hn', 'VIC', '1000', 'l@gmail.com', '123456789', 'python_programming_language, data_science, cyber_security, project_management, software_development, technical_writing', 'test', 'New'),
+(3, 'SE24A', 'tgg', 'luu', 'hht', 'hn', 'VIC', '1000', 'l@gmail.com', '123456789', 'python_programming_language, data_science, cyber_security, project_management, software_development, technical_writing', 'test', 'New');
 
 -- --------------------------------------------------------
 
@@ -67,6 +68,27 @@ CREATE TABLE `jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login_attempts`
+--
+
+CREATE TABLE `login_attempts` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(30) NOT NULL,
+  `time_count` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login_attempts`
+--
+
+INSERT INTO `login_attempts` (`id`, `ip_address`, `time_count`) VALUES
+(5, '127.0.0.1', 1763234443),
+(6, '127.0.0.1', 1763234449),
+(7, '127.0.0.1', 1763234452);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -75,6 +97,14 @@ CREATE TABLE `users` (
   `password` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `password`, `email`) VALUES
+('khoatung', '11072007T', 'luutrikhoatung2020@gmail.com'),
+('tungg', 'Loveismaze,.,00', 'khoatung@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -93,6 +123,12 @@ ALTER TABLE `jobs`
   ADD PRIMARY KEY (`jobref`);
 
 --
+-- Indexes for table `login_attempts`
+--
+ALTER TABLE `login_attempts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -106,7 +142,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `login_attempts`
+--
+ALTER TABLE `login_attempts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
