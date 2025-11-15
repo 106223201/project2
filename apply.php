@@ -23,7 +23,7 @@
     <br>
 
     <section id="apply-form">
-        <form method="post" action="process_eoi.php">
+        <form method="post" action="process_eoi.php" novalidate="novalidate">
             <h2>Application form</h2>
             <section id="job-reference">
                 <label for="refnum">Job Reference Numbers</label>
@@ -133,8 +133,7 @@
         </form>
     </section>
 
-    <footer>
-        <?php include 'footer.inc'; ?>
-    </footer>
 </body>
+    <?php include 'footer.inc'; ?>
+
 </html>

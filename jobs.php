@@ -18,237 +18,143 @@
         <p>Explore roles that shape the future of technology.</p>
     </header>
 
-          <br>
-            <!-- SECTION 1: SOFTWARE ENGINEER -->
-          <main>
-            <section id="job-box">
-                <input type="checkbox" id="job1" class="job-toggle">
-                <label for="job1" class="job-header">
-                    <div class="job-header-content">
-                        <h2>Software Engineer</h2>
-                        <span class="ref-number">Reference: SE24A</span>
-                        <div class="job-meta">
-                            <span>📍 Sydney</span>
-                            <span>💼 Full-time</span>
-                        </div>
-                        <div class="salary">Salary: $120,000 - $160,000 per year</div>
-                    </div>
-                </label>
-
-                <div class="job-details">
-                    <div class="reports-to">Reports to: Engineering Manager</div>
-                    <div class="job-description">
-                        <p>We are seeking a talented Software Engineer to join our growing team. You will design and develop scalable web applications, work with modern technologies, and contribute to building innovative solutions for our global customer base.</p>
-                    </div>
-
-                    <div class="job-content">
-                        <h3>Key Responsibilities</h3>
-                        <ol>
-                            <li>Design, develop, and maintain scalable web applications using modern frameworks</li>
-                            <li>Collaborate with cross-functional teams to define, design, and ship new features</li>
-                            <li>Write clean, maintainable, and efficient code following best practices</li>
-                            <li>Participate in code reviews and provide constructive feedback to team members</li>
-                            <li>Troubleshoot, debug, and resolve production issues in a timely manner</li>
-                            <li>Optimize application performance and ensure high availability</li>
-                        </ol>
-
-                        <h3>Required Qualifications, Skills, and Attributes</h3>
-                        
-                        <h4>Essential</h4>
-                        <ul>
-                            <li>Bachelor's degree in Computer Science, Software Engineering, or related field</li>
-                            <li>3+ years of professional experience in software development</li>
-                            <li>Strong proficiency in JavaScript and one backend language (Python, Java, or Go)</li>
-                            <li>Experience with React.js or Vue.js for frontend development</li>
-                            <li>Solid understanding of RESTful APIs and microservices architecture</li>
-                            <li>Experience with version control systems, particularly Git</li>
-                            <li>Knowledge of SQL databases (PostgreSQL, MySQL)</li>
-                            <li>Strong problem-solving and analytical skills</li>
-                            <li>Excellent written and verbal communication skills</li>
-                        </ul>
-
-                        <h4>Preferable</h4>
-                        <ul>
-                            <li>Master's degree in Computer Science or related field</li>
-                            <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
-                            <li>Knowledge of containerization technologies (Docker, Kubernetes)</li>
-                            <li>Experience with CI/CD pipelines and DevOps practices</li>
-                            <li>Familiarity with NoSQL databases (MongoDB, Redis)</li>
-                            <li>Contributions to open-source projects</li>
-                            <li>Experience with agile development methodologies</li>
-                        </ul>
-                      </div>
-                    <a href="apply.php" class="apply-btn">Apply Now</a>
-                </div>
-            </section>
-
-            <!-- SECTION 2: DATA ANALYST -->
-            <section id="job-box">
-                <div class="job-header">
-                    <h2>Data Analyst</h2>
-                    <span class="ref-number">Reference: DA24B</span>
-                    <div class="job-meta">
-                        <span>📍 Melbourne</span>
-                        <span>💼 Full-time</span>
-                    </div>
-                    <div class="salary">Salary: $85,000 - $115,000 per year</div>
-                    <div class="reports-to">Reports to: Head of Data Analytics</div>
-                </div>
-
-                <div class="job-description">
-                    <p>Join our data team to transform complex datasets into actionable insights that drive business decisions. You will work closely with stakeholders across the organization to understand their needs and deliver data-driven solutions.</p>
-                </div>
-
-                <div class="job-content">
-                    <h3>Key Responsibilities</h3>
-                    <ol>
-                        <li>Collect, process, and analyze large datasets to identify trends and patterns</li>
-                        <li>Create and maintain interactive dashboards and reports for stakeholders</li>
-                        <li>Perform statistical analysis and develop predictive models</li>
-                        <li>Collaborate with business teams to understand data requirements and KPIs</li>
-                        <li>Present findings and recommendations to senior leadership</li>
-                        <li>Ensure data quality and integrity across reporting systems</li>
-                    </ol>
-
-                    <h3>Required Qualifications, Skills, and Attributes</h3>
-                    
-                    <h4>Essential</h4>
-                    <ul>
-                        <li>Bachelor's degree in Statistics, Mathematics, Economics, or related field</li>
-                        <li>2+ years of experience in data analysis or business intelligence</li>
-                        <li>Advanced proficiency in SQL for data extraction and manipulation</li>
-                        <li>Experience with data visualization tools (Tableau, Power BI, or Looker)</li>
-                        <li>Strong knowledge of Python or R for statistical analysis</li>
-                        <li>Understanding of statistical methods and A/B testing</li>
-                        <li>Excellent analytical and problem-solving skills</li>
-                        <li>Strong communication skills with ability to explain complex data to non-technical audiences</li>
-                    </ul>
-
-                    <h4>Preferable</h4>
-                    <ul>
-                        <li>Master's degree in Data Science, Statistics, or related field</li>
-                        <li>Experience with big data technologies (Hadoop, Spark)</li>
-                        <li>Knowledge of machine learning algorithms and frameworks</li>
-                        <li>Experience with cloud data platforms (Snowflake, BigQuery, Redshift)</li>
-                        <li>Familiarity with ETL processes and data warehousing concepts</li>
-                        <li>Experience in financial services or e-commerce industry</li>
-                    </ul>
-                </div>
-                <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
-
-            <!-- SECTION 3: AI/ML ENGINEER -->
-            <section id="job-box">
-                <div class="job-header">
-                    <h2>AI/ML Engineer</h2>
-                    <span class="ref-number">Reference: ML24C</span>
-                    <div class="job-meta">
-                        <span>📍 Melbourne</span>
-                        <span>💼 Full-time</span>
-                    </div>
-                    <div class="salary">Salary: $140,000 - $190,000 per year</div>
-                    <div class="reports-to">Reports to: Director of AI Research</div>
-                </div>
-
-                <div class="job-description">
-                    <p>We're looking for an experienced AI/ML Engineer to develop and deploy cutting-edge machine learning models. You will research, design, and implement AI solutions that enhance our products and create new capabilities for our users.</p>
-                </div>
-
-                <div class="job-content">
-                    <h3>Key Responsibilities</h3>
-                    <ol>
-                        <li>Design, develop, and implement machine learning models and algorithms</li>
-                        <li>Train, evaluate, and optimize ML models for production deployment</li>
-                        <li>Research and apply state-of-the-art AI/ML techniques to business problems</li>
-                        <li>Build and maintain scalable ML pipelines and infrastructure</li>
-                        <li>Collaborate with data engineers, software developers, and product managers</li>
-                        <li>Monitor model performance and implement improvements continuously</li>
-                    </ol>
-
-                    <h3>Required Qualifications, Skills, and Attributes</h3>
-                    
-                    <h4>Essential</h4>
-                    <ul>
-                        <li>Master's degree in Computer Science, Machine Learning, AI, or related field</li>
-                        <li>4+ years of hands-on experience in machine learning engineering</li>
-                        <li>Expert-level programming skills in Python</li>
-                        <li>Deep knowledge of ML frameworks (TensorFlow, PyTorch, or Keras)</li>
-                        <li>Experience with deep learning architectures (CNNs, RNNs, Transformers)</li>
-                        <li>Strong understanding of NLP, computer vision, or recommendation systems</li>
-                        <li>Experience deploying ML models to production environments</li>
-                        <li>Solid foundation in statistics, probability, and linear algebra</li>
-                    </ul>
-
-                    <h4>Preferable</h4>
-                    <ul>
-                        <li>PhD in Machine Learning, AI, or related field</li>
-                        <li>Published research papers in top-tier conferences (NeurIPS, ICML, CVPR)</li>
-                        <li>Experience with MLOps tools and practices (MLflow, Kubeflow)</li>
-                        <li>Knowledge of reinforcement learning and generative AI</li>
-                        <li>Experience with distributed training and model optimization</li>
-                        <li>Familiarity with LLMs and prompt engineering</li>
-                        <li>Experience with edge AI and model quantization</li>
-                    </ul>
-                </div>
-                <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
-
-            <!-- SECTION 4: CLOUD ENGINEER -->
-            <section id="job-box">
-                <div class="job-header">
-                    <h2>Cloud Engineer</h2>
-                    <span class="ref-number">Reference: CE24D</span>
-                    <div class="job-meta">
-                        <span>📍 Sydney</span>
-                        <span>💼 Full-time</span>
-                    </div>
-                    <div class="salary">Salary: $110,000 - $145,000 per year</div>
-                    <div class="reports-to">Reports to: Cloud Infrastructure Lead</div>
-                </div>
-
-                <div class="job-description">
-                    <p>As a Cloud Engineer, you will design, implement, and manage our cloud infrastructure to ensure high availability, security, and cost-efficiency. You will work with development teams to architect scalable cloud solutions that support our growing platform.</p>
-                </div>
-
-                <div class="job-content">
-                    <h3>Key Responsibilities</h3>
-                    <ol>
-                        <li>Design, implement, and manage cloud infrastructure on AWS, Azure, or GCP</li>
-                        <li>Automate deployment processes using Infrastructure as Code (IaC) tools</li>
-                        <li>Monitor and optimize cloud resource usage and cost management</li>
-                        <li>Implement and maintain security, compliance, and disaster recovery procedures</li>
-                        <li>Support development teams with cloud architecture guidance and best practices</li>
-                        <li>Troubleshoot and resolve cloud infrastructure issues</li>
-                    </ol>
-
-                    <h3>Required Qualifications, Skills, and Attributes</h3>
-                    
-                    <h4>Essential</h4>
-                    <ul>
-                        <li>Bachelor's degree in Computer Science, Information Technology, or related field</li>
-                        <li>3+ years of experience with cloud platforms (AWS, Azure, or GCP)</li>
-                        <li>Proficiency in scripting languages (Python, Bash, or PowerShell)</li>
-                        <li>Strong experience with Infrastructure as Code tools (Terraform or CloudFormation)</li>
-                        <li>Experience with containerization technologies (Docker, Kubernetes)</li>
-                        <li>Knowledge of CI/CD pipelines and automation tools (Jenkins, GitLab CI)</li>
-                        <li>Strong understanding of networking, security, and system administration</li>
-                        <li>Experience with monitoring and logging tools (CloudWatch, Prometheus, ELK)</li>
-                    </ul>
-
-                    <h4>Preferable</h4>
-                    <ul>
-                        <li>Cloud certifications (AWS Solutions Architect, Azure Administrator, GCP Professional)</li>
-                        <li>Experience with multiple cloud providers</li>
-                        <li>Knowledge of serverless architectures and services (Lambda, Cloud Functions)</li>
-                        <li>Experience with configuration management tools (Ansible, Chef, Puppet)</li>
-                        <li>Familiarity with service mesh technologies (Istio, Linkerd)</li>
-                        <li>Understanding of FinOps principles and cost optimization strategies</li>
-                        <li>Experience with database management in cloud environments</li>
-                    </ul>
-                </div>
-                <a href="apply.php" class="apply-btn">Apply Now</a>
-            </section>
+        <br>
+    <div class="jobs-container">
+        <main>
+        <?php
+        // Database connection
+        require_once 'settings.php'; // You'll need to create this file
+        
+            // Fetch all jobs
+            $sql = "SELECT * FROM jobs ORDER BY job_id";
+                    $result = mysqli_query($conn, $sql);
+        
+        if ($result && mysqli_num_rows($result) > 0) {
+            $jobCounter = 1;
+            
+            while ($job = mysqli_fetch_assoc($result)) {
+                $jobId = $job['job_id'];
+                
+                // Fetch responsibilities for this job
+                $sqlResp = "SELECT responsibility_text FROM job_responsibilities 
+                           WHERE job_id = ? ORDER BY display_order";
+                $stmtResp = mysqli_prepare($conn, $sqlResp);
+                mysqli_stmt_bind_param($stmtResp, "i", $jobId);
+                mysqli_stmt_execute($stmtResp);
+                $resultResp = mysqli_stmt_get_result($stmtResp);
+                $responsibilities = [];
+                while ($row = mysqli_fetch_assoc($resultResp)) {
+                    $responsibilities[] = $row['responsibility_text'];
+                }
+                mysqli_stmt_close($stmtResp);
+                
+                // Fetch essential qualifications
+                $sqlEssential = "SELECT qualification_text FROM job_qualifications 
+                                WHERE job_id = ? AND is_essential = TRUE ORDER BY display_order";
+                $stmtEssential = mysqli_prepare($conn, $sqlEssential);
+                mysqli_stmt_bind_param($stmtEssential, "i", $jobId);
+                mysqli_stmt_execute($stmtEssential);
+                $resultEssential = mysqli_stmt_get_result($stmtEssential);
+                $essentialQuals = [];
+                while ($row = mysqli_fetch_assoc($resultEssential)) {
+                    $essentialQuals[] = $row['qualification_text'];
+                }
+                mysqli_stmt_close($stmtEssential);
+                
+                // Fetch preferable qualifications
+                $sqlPreferable = "SELECT qualification_text FROM job_qualifications 
+                                 WHERE job_id = ? AND is_essential = FALSE ORDER BY display_order";
+                $stmtPreferable = mysqli_prepare($conn, $sqlPreferable);
+                mysqli_stmt_bind_param($stmtPreferable, "i", $jobId);
+                mysqli_stmt_execute($stmtPreferable);
+                $resultPreferable = mysqli_stmt_get_result($stmtPreferable);
+                $preferableQuals = [];
+                while ($row = mysqli_fetch_assoc($resultPreferable)) {
+                    $preferableQuals[] = $row['qualification_text'];
+                }
+                mysqli_stmt_close($stmtPreferable);
+                
+                // Format salary
+                $salaryFormatted = '$' . number_format($job['salary_min']) . ' - $' . 
+                                  number_format($job['salary_max']) . ' per year';
+                
+                // Output job section
+                echo '<section id="job-box">';
+                echo '<input type="checkbox" id="job' . $jobCounter . '" class="job-toggle">';
+                echo '<label for="job' . $jobCounter . '" class="job-header">';
+                echo '<div class="job-header-content">';
+                echo '<h2>' . htmlspecialchars($job['title']) . '</h2>';
+                echo '<span class="ref-number">Reference: ' . htmlspecialchars($job['reference']) . '</span>';
+                echo '<div class="job-meta">';
+                echo '<span>📍 ' . htmlspecialchars($job['location']) . '</span>';
+                echo '<span>💼 ' . htmlspecialchars($job['employment_type']) . '</span>';
+                echo '</div>';
+                echo '<div class="salary">Salary: ' . $salaryFormatted . '</div>';
+                echo '</div>';
+                echo '<span class="toggle-icon">▼</span>';
+                echo '</label>';
+                
+                echo '<div class="job-details">';
+                echo '<div class="reports-to">Reports to: ' . htmlspecialchars($job['reports_to']) . '</div>';
+                
+                echo '<div class="job-description">';
+                echo '<p>' . htmlspecialchars($job['description']) . '</p>';
+                echo '</div>';
+                
+                echo '<div class="job-content">';
+                
+                // Key Responsibilities
+                if (!empty($responsibilities)) {
+                    echo '<h3>Key Responsibilities</h3>';
+                    echo '<ol>';
+                    foreach ($responsibilities as $resp) {
+                        echo '<li>' . htmlspecialchars($resp) . '</li>';
+                    }
+                    echo '</ol>';
+                }
+                
+                echo '<h3>Required Qualifications, Skills, and Attributes</h3>';
+                
+                // Essential Qualifications
+                if (!empty($essentialQuals)) {
+                    echo '<h4>Essential</h4>';
+                    echo '<ul>';
+                    foreach ($essentialQuals as $qual) {
+                        echo '<li>' . htmlspecialchars($qual) . '</li>';
+                    }
+                    echo '</ul>';
+                }
+                
+                // Preferable Qualifications
+                if (!empty($preferableQuals)) {
+                    echo '<h4>Preferable</h4>';
+                    echo '<ul>';
+                    foreach ($preferableQuals as $qual) {
+                        echo '<li>' . htmlspecialchars($qual) . '</li>';
+                    }
+                    echo '</ul>';
+                }
+                
+                echo '</div>';
+                echo '<a href="apply.php" class="apply-btn">Apply Now</a>';
+                echo '</div>';
+                echo '</section>';
+                
+                $jobCounter++;
+            }
+        } else {
+            echo '<p class="error">Error loading job listings. Please try again later.</p>';
+            if (mysqli_error($conn)) {
+                error_log("Database error: " . mysqli_error($conn));
+            }
+        }
+        
+        // Close connection
+        mysqli_close($conn);
+        ?>
         </main>
+
+
 
         <!-- ASIDE: WHY EPASS -->
         <aside class="float-item">
@@ -291,13 +197,12 @@
             </div>
         </aside>
 
-      <br>
+    </div>
 
   <!-- Job descriptions were generated by ChatGPT -->
 
-    <footer>
-        <?php include 'footer.inc'; ?>
-    </footer>
 
 </body>
+    <?php include 'footer.inc'; ?>
+
 </html>

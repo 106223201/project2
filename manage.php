@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 // // 1. LOGIN CHECKING FOR MANAGER
@@ -86,15 +84,9 @@ $result = mysqli_query($conn, $query);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Nguyen Tuan Anh">
     <title>Manage EOI</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 15px; }
-        th, td { padding: 10px; border: 1px solid #ccc; }
-        th { background: #f0f0f0; }
-        form { margin-bottom: 25px; padding: 10px; border: 1px solid #ddd; }
-        .msg { color: green; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="styles/manage.css">
 </head>
 <body>
 
@@ -159,7 +151,7 @@ $result = mysqli_query($conn, $query);
             echo "<tr>
                 <td>{$row['EOInumber']}</td>
                 <td>{$row['jobref']}</td>
-                <td>{$row['firstname']} {$row['lastname']}</td>
+                <td>{$row['Fname']} {$row['Lname']}</td>
                 <td>{$row['email']}</td>
                 <td>{$row['phone']}</td>
                 <td>{$row['status']}</td>

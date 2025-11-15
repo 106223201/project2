@@ -1,6 +1,13 @@
 <?php
-    require_once('settings.php');
     session_start();
+    require_once('settings.php');
+
+    // Prevent direct access - redirect if form wasn't submitted
+    if (!isset($_POST['save_record'])) {
+    header("Location: apply.php");
+    exit();
+}
+
 
     $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 

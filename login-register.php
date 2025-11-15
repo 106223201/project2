@@ -1,5 +1,5 @@
 <?php 
-    require_once('setting.php');
+    require_once('settings.php');
 
     session_start();
     $msg_log="";
@@ -91,9 +91,13 @@
 <html lang="en">
 
 <head>
+    <meta name="keywords" content="HTML, Form, Login, Register">
+    <meta name="author" content="Luu Tri Khoa Tung">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles/login-register.css">
     <title>Login - Register Page</title>
+    <a href="index.php"><img class="logo" src ="images/logo.png" alt ="logo"></a>
+    <br><br>
 </head>
 
 <body>
@@ -153,4 +157,7 @@
     <script src="login-register.js"></script>
 </body>
 
-</html>
+<br><br>
+    <p> &copy; 2025 ePass Software. All rights reserved.</p>
+
+    </html>
