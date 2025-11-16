@@ -63,11 +63,11 @@ if (!empty($errors)) {
     exit();
 }
 
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $insertQuery = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
 $insertStmt = mysqli_prepare($conn, $insertQuery);
-mysqli_stmt_bind_param($insertStmt, "sss", $username, $hashed_password, $email);
+mysqli_stmt_bind_param($insertStmt, "sss", $username, $password, $email);
 
 if (mysqli_stmt_execute($insertStmt)) {
     $_SESSION['success_message'] = "Registration successful! Please log in.";
