@@ -35,7 +35,8 @@
             $msg_reg = "Email is already registered. Please use a different email.";
         }
         else {
-            $insertQuery = "INSERT INTO users (username, password, email) VALUES ('$name', '$password', '$email')";
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $insertQuery = "INSERT INTO users (username, password, email) VALUES ('$name', '$hashedPassword', '$email')";
             $insertResult = mysqli_query($conn, $insertQuery);
             if ($insertResult) {
                 $msg_reg = "Registration successful! You can now log in.";
