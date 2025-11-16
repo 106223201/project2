@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('init_session.php');
 require_once('settings.php');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['signup'])) {
@@ -63,11 +64,11 @@ if (!empty($errors)) {
     exit();
 }
 
-// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $insertQuery = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
 $insertStmt = mysqli_prepare($conn, $insertQuery);
-mysqli_stmt_bind_param($insertStmt, "sss", $username, $password, $email);
+mysqli_stmt_bind_param($insertStmt, "sss", $username, $hashed_password, $email);
 
 if (mysqli_stmt_execute($insertStmt)) {
     $_SESSION['success_message'] = "Registration successful! Please log in.";

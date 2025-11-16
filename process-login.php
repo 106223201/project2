@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('init_session.php');
 require_once('settings.php');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['login'])) {
@@ -60,7 +61,7 @@ $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) == 1) {
     $userData = mysqli_fetch_assoc($result);
     
-    if ($password === $userData['password']) {
+    if (password_verify($password, $userData['password'])) {
         $delete_attempts = "DELETE FROM login_attempts WHERE ip_address = ?";
         $delete_stmt = mysqli_prepare($conn, $delete_attempts);
         mysqli_stmt_bind_param($delete_stmt, "s", $ip_address);

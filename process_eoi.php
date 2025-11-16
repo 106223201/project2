@@ -8,6 +8,9 @@ if (!isset($_POST['save_record'])) {
     exit();
 }
 
+// Check if user is logged in
+$user_id = getCurrentUserId();
+
 // Connect to database
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
@@ -15,6 +18,36 @@ $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+// Create EOI table if it doesn't exist
+$createTableQuery = "CREATE TABLE IF NOT EXISTS eoi (
+    EOInumber INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NULL,
+    jobref VARCHAR(10) NOT NULL,
+    Fname VARCHAR(20) NOT NULL,
+    Lname VARCHAR(20) NOT NULL,
+    dob DATE NOT NULL,
+    gender ENUM('Male', 'Female') NOT NULL,
+    street VARCHAR(40) NOT NULL,
+    suburbtown VARCHAR(40) NOT NULL,
+    state VARCHAR(3) NOT NULL,
+    postcode VARCHAR(4) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(12) NOT NULL,
+    skills TEXT NOT NULL,
+    otherskills TEXT,
+    status ENUM('New', 'Under Review', 'Interview Scheduled', 'Accepted', 'Rejected') DEFAULT 'New',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL,
+    INDEX idx_user_id (user_id),
+    INDEX idx_jobref (jobref),
+    INDEX idx_status (status)
+)";
+
+mysqli_query($conn, $createTableQuery);
+
+// Initialize error array
+$errors = [];
 
 // Sanitization function
 function sanitize_input($data) {
