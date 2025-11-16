@@ -76,10 +76,10 @@ unset($_SESSION['success_message']);
                 <?php endif; ?>
                 
                 <input type="text" name="username_reg" placeholder="Username" 
-                       value="<?php echo htmlspecialchars($form_username); ?>" required>
+                       value="<?php echo htmlspecialchars($form_username); ?>">
                 <input type="email" name="email_reg" placeholder="Email" 
-                       value="<?php echo htmlspecialchars($form_email); ?>" required>
-                <input type="password" name="password_reg" placeholder="Password (min 8 characters)" required>
+                       value="<?php echo htmlspecialchars($form_email); ?>" >
+                <input type="password" name="password_reg" placeholder="Password (min 8 characters)">
                 <button name="signup">Sign Up</button>
             </form>
         </div>
@@ -111,8 +111,8 @@ unset($_SESSION['success_message']);
                     </div>
                 <?php endif; ?>
                 
-                <input type="text" name="username_log" placeholder="Username" required>
-                <input type="password" name="password_log" placeholder="Password" required>
+                <input type="text" name="username_log" placeholder="Username">
+                <input type="password" name="password_log" placeholder="Password">
                 <a href="#">Forgot Your Password?</a>
                 <button name="login">Sign In</button>
             </form>
