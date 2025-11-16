@@ -8,8 +8,8 @@ if (!isset($_POST['save_record'])) {
     exit();
 }
 
-// Check if user is logged in
-$user_id = getCurrentUserId();
+// // Check if user is logged in
+// $user_id = getCurrentUserId();
 
 // Connect to database
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
@@ -164,18 +164,18 @@ if (empty($_POST['postalcode'])) {
     $postcode = sanitize_input($_POST['postalcode']);
     if (!preg_match("/^[0-9]{4}$/", $postcode)) {
         $errors[] = "Postcode must be exactly 4 digits.";
-    } else {
-        // Validate postcode matches state
-        $postcode_ranges = [
-            'VIC' => [3000, 3999, 8000, 8999],
-            'NSW' => [1000, 2999],
-            'QLD' => [4000, 4999, 9000, 9999],
-            'NT' => [800, 899],
-            'WA' => [6000, 6999],
-            'SA' => [5000, 5999],
-            'TAS' => [7000, 7999],
-            'ACT' => [200, 299, 2600, 2618]
-        ];
+    // } else {
+    //     // Validate postcode matches state
+    //     $postcode_ranges = [
+    //         'VIC' => [3000, 3999, 8000, 8999],
+    //         'NSW' => [1000, 2999],
+    //         'QLD' => [4000, 4999, 9000, 9999],
+    //         'NT' => [800, 899],
+    //         'WA' => [6000, 6999],
+    //         'SA' => [5000, 5999],
+    //         'TAS' => [7000, 7999],
+    //         'ACT' => [200, 299, 2600, 2618]
+    //     ];
         
         if (isset($state) && isset($postcode_ranges[$state])) {
             $valid_postcode = false;

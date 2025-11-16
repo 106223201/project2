@@ -2,6 +2,7 @@
 <?php
 // Initialize session
 require_once('init_session.php');
+require_once('settings.php');
 
 // Get login status
 $username = getCurrentUsername();
