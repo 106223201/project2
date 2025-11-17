@@ -1,3 +1,5 @@
+/* Coloring pattern and layout recommended by Claude AI */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 * {
             margin: 0;
@@ -24,7 +26,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #5673f5 0%, #2249f6 100%);
+            background: linear-gradient(135deg, #192768d7 0%, #03176d 100%);
             color: white;
             padding: 50px;
             text-align: center;
@@ -47,14 +49,14 @@
 
         .intro {
             background: #f8f9fa;
-            border-left: 5px solid #667eea;
+            border-left: 5px solid #192768d7;
             padding: 25px;
             margin-bottom: 40px;
             border-radius: 10px;
         }
 
         .intro h2 {
-            color: #667eea;
+            color: #192768d7;
             margin-bottom: 15px;
             font-size: 1.8em;
         }
@@ -84,11 +86,11 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #2240c8;
         }
 
         .enhancement-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1b2964d7 0%, #03176d 100%);
             color: white;
             width: 60px;
             height: 60px;
@@ -117,7 +119,7 @@
         }
 
         .subsection h4 {
-            color: #667eea;
+            color: #4766f0;
             font-size: 1.3em;
             margin-bottom: 12px;
             display: flex;
@@ -148,7 +150,7 @@
 
         .code-box {
             background: #f8f9fa;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #0d2799;
             padding: 20px;
             margin: 15px 0;
             border-radius: 8px;
@@ -169,11 +171,11 @@
             background: #f8f9fa;
             padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #764ba2;
+            border-left: 4px solid #2c1f78;
         }
 
         .feature-item strong {
-            color: #667eea;
+            color: #4766f0;
             display: block;
             margin-bottom: 5px;
         }

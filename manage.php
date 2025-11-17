@@ -26,7 +26,7 @@ $sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'created_at';
 $sort_order = isset($_GET['order']) ? $_GET['order'] : 'DESC';
 
 // Validate sort column
-$valid_sort_columns = ['EOInumber', 'jobref', 'Fname', 'Lname', 'status', 'created_at', 'email'];
+$valid_sort_columns = ['EOInumber', 'jobref', 'Fname', 'Lname', 'status', 'created_at', 'email', 'state', 'postcode'];
 if (!in_array($sort_by, $valid_sort_columns)) {
     $sort_by = 'created_at';
 }
@@ -359,6 +359,10 @@ $stats = mysqli_fetch_assoc($stats_result);
                        class="<?php echo ($sort_by == 'Fname') ? 'active' : ''; ?>">First Name</a>
                     <a href="?<?php echo http_build_query(array_merge($_GET, ['sort' => 'Lname', 'order' => 'ASC'])); ?>"
                        class="<?php echo ($sort_by == 'Lname') ? 'active' : ''; ?>">Last Name</a>
+                    <a href="?<?php echo http_build_query(array_merge($_GET, ['sort' => 'state', 'order' => 'ASC'])); ?>"
+                       class="<?php echo ($sort_by == 'state') ? 'active' : ''; ?>">State</a>
+                    <a href="?<?php echo http_build_query(array_merge($_GET, ['sort' => 'postcode', 'order' => 'ASC'])); ?>"
+                       class="<?php echo ($sort_by == 'postcode') ? 'active' : ''; ?>">Zipcode</a>
                     <a href="?<?php echo http_build_query(array_merge($_GET, ['sort' => 'status', 'order' => 'ASC'])); ?>"
                        class="<?php echo ($sort_by == 'status') ? 'active' : ''; ?>">Status</a>
                     <a href="?<?php echo http_build_query(array_merge($_GET, ['sort' => 'created_at', 'order' => 'DESC'])); ?>"
@@ -375,6 +379,8 @@ $stats = mysqli_fetch_assoc($stats_result);
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>State</th>
+                                <th>Zipcode</th>
                                 <th>Status</th>
                                 <th>Applied Date</th>
                                 <th>Actions</th>
@@ -388,6 +394,8 @@ $stats = mysqli_fetch_assoc($stats_result);
                                     <td><?php echo htmlspecialchars($app['Fname'] . ' ' . $app['Lname']); ?></td>
                                     <td><?php echo htmlspecialchars($app['email']); ?></td>
                                     <td><?php echo htmlspecialchars($app['phone']); ?></td>
+                                    <td><?php echo htmlspecialchars($app['state']); ?></td>
+                                    <td><?php echo htmlspecialchars($app['postcode']); ?></td>
                                     <td>
                                         <span class="status-badge status-<?php echo strtolower(str_replace(' ', '-', $app['status'])); ?>">
                                             <?php echo htmlspecialchars($app['status']); ?>

@@ -85,10 +85,10 @@
                         </ul>
                         
                         <div class="code-box">
-                            // Example: Dynamic sort query with security<br>
-                            $allowed_sorts = ['EOInumber', 'Fname', 'Lname', 'jobref', 'status', 'created_at'];<br>
-                            $sort_by = in_array($_GET['sort'], $allowed_sorts) ? $_GET['sort'] : 'EOInumber';<br>
-                            $query = "SELECT * FROM eoi ORDER BY $sort_by DESC";
+                            // Dynamic sort query with security<br>
+                            $valid_sort_columns = ['EOInumber', 'jobref', 'Fname', 'Lname', 'status', 'created_at', 'email', 'state', 'postcode'];<br>
+                            $sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'created_at';<br>
+                            $query = "SELECT * FROM eoi ORDER BY $sort_by $sort_order";
                         </div>
                     </div>
 
@@ -98,12 +98,8 @@
                             <li>Quickly identify urgent applications by date</li>
                             <li>Group applications by job position for batch processing</li>
                             <li>Track application status progression efficiently</li>
-                            <li>Improved workflow and reduced processing time by up to 40%</li>
+                            <li>Improved workflow and reduced processing time</li>
                         </ul>
-                    </div>
-
-                    <div class="screenshot-note">
-                        📸 Screenshot Location: manage.php - Sorting Dropdown Interface
                     </div>
                 </div>
             </div>
@@ -132,10 +128,9 @@
                             <h5>Enforced Requirements:</h5>
                             <ul>
                                 <li><strong>Uniqueness Check:</strong> Real-time database verification to prevent duplicate usernames</li>
-                                <li><strong>Length:</strong> Minimum 5 characters, maximum 20 characters</li>
-                                <li><strong>Character Set:</strong> Alphanumeric only (letters and numbers), no special characters</li>
+                                <li><strong>Length:</strong> Minimum 8 characters, maximum 20 characters</li>
+                                <li><strong>Character Set:</strong> Alphanumeric only (letters and numbers), no special characters (underscores are allowed)</li>
                                 <li><strong>Case Sensitivity:</strong> Usernames are case-insensitive for login consistency</li>
-                                <li><strong>Reserved Words:</strong> Blocks common system words (admin, root, system, etc.)</li>
                             </ul>
                         </div>
                     </div>
@@ -149,17 +144,17 @@
                                 <li><strong>Uppercase Letter:</strong> At least one uppercase letter (A-Z)</li>
                                 <li><strong>Lowercase Letter:</strong> At least one lowercase letter (a-z)</li>
                                 <li><strong>Number:</strong> At least one digit (0-9)</li>
-                                <li><strong>Special Character:</strong> At least one symbol (@, #, $, %, etc.)</li>
-                                <li><strong>Encryption:</strong> Passwords hashed using <span class="highlight">PASSWORD_BCRYPT</span> algorithm</li>
+                                <li><strong>Special Character:</strong> At least one special symbol (@, #, $, %, !, *, ?, &)</li>
+                                <li><strong>Encryption:</strong> Passwords hashed using <span class="highlight">PASSWORD_DEFAULT</span> algorithm</li>
                                 <li><strong>Confirmation:</strong> Double-entry verification to prevent typos</li>
                             </ul>
                         </div>
 
                         <div class="code-box">
                             // Password hashing implementation<br>
-                            $hashed_password = password_hash($password, PASSWORD_BCRYPT);<br>
+                            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                             // Verification during login<br>
-                            password_verify($input_password, $stored_hash);
+                            password_verify($password, $row['password');
                         </div>
                     </div>
 
@@ -173,7 +168,7 @@
                             &nbsp;&nbsp;password VARCHAR(255) NOT NULL,<br>
                             &nbsp;&nbsp;email VARCHAR(255) UNIQUE NOT NULL,<br>
                             &nbsp;&nbsp;failed_attempts INT DEFAULT 0,<br>
-                            &nbsp;&nbsp;lockout_until DATETIME NULL,<br>
+                            &nbsp;&nbsp;lockout_until UNIQUE DATETIME NULL,<br>
                             &nbsp;&nbsp;created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<br>
                             &nbsp;&nbsp;last_login TIMESTAMP NULL<br>
                             );
@@ -189,12 +184,6 @@
                             <li>CSRF token implementation for form security</li>
                             <li>Real-time feedback for validation errors</li>
                         </ul>
-                    </div>
-
-                    <div class="screenshot-note">
-                        📸 Screenshot Locations: 
-                        <br>1. manager-register.php - Registration Form
-                        <br>2. manager-register.php - Password Validation Error Messages
                     </div>
                 </div>
             </div>
@@ -241,7 +230,10 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;$_SESSION['manager_logged_in'] !== true) {<br>
                             &nbsp;&nbsp;header("Location: manager-login.php");<br>
                             &nbsp;&nbsp;exit();<br>
-                            }
+                            // Initialize session<br>
+                            require_once(<a class="highlight">'init_session.php'</a>);<br>
+                            // Log out of manager account<br>
+                            <a class="highlight">manager-logout.php</a>;
                         </div>
 
                         <div class="feature-list">
@@ -262,12 +254,6 @@
                                 Complete session destruction and cookie clearing
                             </div>
                         </div>
-                    </div>
-
-                    <div class="screenshot-note">
-                        📸 Screenshot Locations:
-                        <br>1. manager-login.php - Login Interface
-                        <br>2. manage.php - Access Denied Redirect (when not logged in)
                     </div>
                 </div>
             </div>
@@ -309,9 +295,9 @@
                             if ($failed_attempts >= 3) {<br>
                             &nbsp;&nbsp;$lockout_until = date('Y-m-d H:i:s', strtotime('+15 minutes'));<br>
                             &nbsp;&nbsp;// Update database with lockout time<br>
-                            &nbsp;&nbsp;$update_query = "UPDATE managers SET lockout_until = ?<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE username = ?";<br>
-                            }
+                            &nbsp;&nbsp;$update_query = "UPDATE managers SET failed_attempts = ?,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockout_until = ? WHERE username = ?";<br>
+                        }
                         </div>
                     </div>
 
@@ -329,10 +315,6 @@
                             <div class="feature-item">
                                 <strong>⏰ Dynamic Timer</strong>
                                 Shows exact time remaining until unlock
-                            </div>
-                            <div class="feature-item">
-                                <strong>🔔 Admin Alerts</strong>
-                                Optional email notification on lockout
                             </div>
                             <div class="feature-item">
                                 <strong>🔓 Manual Override</strong>
@@ -360,7 +342,6 @@
                         <h5>🔍 Advanced Features:</h5>
                         <ul>
                             <li><strong>IP-Based Tracking:</strong> Additional layer tracks failed attempts by IP address</li>
-                            <li><strong>Progressive Delays:</strong> Can be configured for increasing lockout durations (15 min, 30 min, 1 hour)</li>
                             <li><strong>Whitelist Support:</strong> Trusted IPs can have higher attempt thresholds</li>
                             <li><strong>Audit Trail:</strong> Complete log of all authentication attempts for compliance</li>
                         </ul>
@@ -368,20 +349,13 @@
 
                     <div class="code-box">
                         // Lockout check before login processing<br>
-                        if ($lockout_until && strtotime($lockout_until) > time()) {<br>
-                        &nbsp;&nbsp;$remaining = strtotime($lockout_until) - time();<br>
-                        &nbsp;&nbsp;$minutes = floor($remaining / 60);<br>
-                        &nbsp;&nbsp;$error = "Account locked. Try again in $minutes minutes.";<br>
-                        } else {<br>
-                        &nbsp;&nbsp;// Process login attempt<br>
-                        }
-                    </div>
-
-                    <div class="screenshot-note">
-                        📸 Screenshot Locations:
-                        <br>1. manager-login.php - Failed Login Error Message
-                        <br>2. manager-login.php - Account Lockout Warning (after 2 failed attempts)
-                        <br>3. manager-login.php - Lockout Screen with Countdown Timer
+                        if ($row = mysqli_fetch_assoc($result)) {<br>
+                        // Check if account is locked
+                        if ($row['locked_until'] && strtotime($row['locked_until']) > time()) {
+                        $minutes_left = ceil((strtotime($row['locked_until']) - time()) / 60); <br>
+                        $error_message = "Account is locked due to multiple failed login attempts. Please try again in {$minutes_left} minute(s)."; <br>
+                        } else <br>
+                    }
                     </div>
                 </div>
             </div>
@@ -440,13 +414,13 @@
                     <div class="subsection">
                         <h4>Testing & Validation</h4>
                         <ul>
-                            <li>✓ All features tested with valid and invalid inputs</li>
-                            <li>✓ SQL injection attempts blocked successfully</li>
-                            <li>✓ XSS attacks prevented through sanitization</li>
-                            <li>✓ Lockout mechanism verified with multiple test accounts</li>
-                            <li>✓ Sorting functionality tested with 100+ EOI records</li>
-                            <li>✓ Session timeout verified at 30-minute threshold</li>
-                            <li>✓ Cross-browser compatibility confirmed</li>
+                            <li class="success-badge">✓ All features tested with valid and invalid inputs</li>
+                            <li class="success-badge">✓ SQL injection attempts blocked successfully</li>
+                            <li class="success-badge">✓ XSS attacks prevented through sanitization</li>
+                            <li class="success-badge">✓ Lockout mechanism verified with multiple test accounts</li>
+                            <li class="success-badge">✓ Sorting functionality tested with 100+ EOI records</li>
+                            <li class="success-badge">✓ Session timeout verified at 30-minute threshold</li>
+                            <li class="success-badge">✓ Cross-browser compatibility confirmed</li>
                         </ul>
                     </div>
                 </div>
