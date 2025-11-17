@@ -128,8 +128,7 @@ unset($_SESSION['success_message']);
                 <input type="email" name="email_reg" placeholder="Email" 
                        value="<?php echo htmlspecialchars($form_email); ?>" >
                 <input type="password" name="password_reg" placeholder="Password (min 8 characters)">
-                <input type="password" id="confirm_password_reg" name="confirm_password_reg" placeholder="Confirm Password">
-                <!-- <p id="confirm-msg" class="confirm-warning"></p> -->
+                <input type="password" name="confirm_password_reg" placeholder="Confirm Password">
                 <button name="signup">Sign Up</button>
             </form>
         </div>
@@ -183,8 +182,7 @@ unset($_SESSION['success_message']);
             </div>
         </div>
     </div>
-
-    <!-- For Toggle to run -->
+                    
     <script src="login-register.js"></script>
     
     <?php if (!empty($registration_errors)): ?>

@@ -26,8 +26,7 @@ body {
     overflow: hidden;
     width: 768px;
     max-width: 100%;
-    min-height: auto;
-    height: auto;
+    min-height: 480px;
 }
 
 .container p{
