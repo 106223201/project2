@@ -75,6 +75,26 @@
             margin-top: 5px;
             line-height: 1.4;
         }
+
+        ul {
+            list-style-type: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .password-requirements li {
+            color: #555;
+            margin: 4px 0;
+        }
+
+        .password-requirements .valid {
+            color: green;
+            font-weight: bold;
+        }
+
+        .password-requirements .invalid {
+        color: red;
+        }
         
         .error-message {
             background-color: #ffebee;

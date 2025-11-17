@@ -456,7 +456,7 @@
         <div class="footer">
             <p><strong>ePass HR Management System</strong> | Enhanced Security & Functionality</p>
             <p>For technical support or questions, contact: <a href="mailto:support@epass.com">support@epass.com</a></p>
-            <p style="margin-top: 10px; font-size: 0.9em;">© 2024 ePass Technologies. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">&copy; 2024 ePass Software. All rights reserved.</p>
         </div>
     </div>
 </body>

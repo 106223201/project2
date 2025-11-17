@@ -19,6 +19,7 @@ $errors = [];
 $username = trim($_POST['username_reg']);
 $email = trim($_POST['email_reg']);
 $password = $_POST['password_reg'];
+$confirm_password = $_POST['confirm_password_reg'];
 
 if (empty($username)) {
     $errors[] = "Username is required.";
@@ -52,8 +53,29 @@ if (empty($email)) {
 
 if (empty($password)) {
     $errors[] = "Password is required.";
-} elseif (strlen($password) < 8) {
-    $errors[] = "Password must be at least 8 characters.";
+} else {
+    // Password strength validation
+    if (strlen($password) < 8) {
+        $errors[] = "Password must be at least 8 characters.";
+    }
+    if (!preg_match("/[A-Z]/", $password)) {
+        $errors[] = "Password must contain at least one uppercase letter.";
+    }
+    if (!preg_match("/[a-z]/", $password)) {
+        $errors[] = "Password must contain at least one lowercase letter.";
+    }
+    if (!preg_match("/[0-9]/", $password)) {
+        $errors[] = "Password must contain at least one number.";
+    }
+    if (!preg_match("/[@$!%*?&#]/", $password)) {
+        $errors[] = "Password must contain at least one special character (@$!%*?&#).";
+    }
+}
+
+if (empty($confirm_password)) {
+    $errors[] = "Please confirm your password.";
+} elseif ($password !== $confirm_password) {
+    $errors[] = "Passwords do not match.";
 }
 
 if (!empty($errors)) {

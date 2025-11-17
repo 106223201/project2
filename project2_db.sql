@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2025 at 09:53 AM
+-- Generation Time: Nov 17, 2025 at 12:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,12 +53,15 @@ CREATE TABLE `eoi` (
 
 INSERT INTO `eoi` (`EOInumber`, `user_id`, `jobref`, `Fname`, `Lname`, `dob`, `gender`, `street`, `suburbtown`, `state`, `postcode`, `email`, `phone`, `skills`, `otherskills`, `status`, `created_at`) VALUES
 (4, NULL, 'ML24C', 'Hung', 'Nguyen', '', 'Male', '1 Spoonstreet', 'Melbourne', 'NSW', '1234', 'hungphan@gmail.com', '021234543534', 'python_programming_language, data_science, cyber_security, project_management', '', 'New', '2025-11-16 15:51:28'),
-(11, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 15:59:50'),
+(11, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'Interview Scheduled', '2025-11-16 15:59:50'),
 (12, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:03:57'),
 (13, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:04:05'),
 (14, NULL, 'SE24A', 'fdsfasdf', 'fsafdasf', '2000-10-10', '', 'fsdfasdf', 'fdsafadsf', 'VIC', '4000', 'fdsafds@gmail.com', '12312312321', 'python_programming_language, data_science', '', 'New', '2025-11-16 17:24:25'),
 (15, NULL, 'SE24A', 'Duong', 'Nguyen', '2000-10-25', '', '1 Spoonstreet', 'Melbourne', 'VIC', '1321', 'mkenzienguyen@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'New', '2025-11-17 07:55:44'),
-(16, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '4 Spoonstreet', 'Melbourne', 'VIC', '4000', 'mkenzienguyen@gmail.com', '0983045486', 'python_programming_language, data_science', '', 'New', '2025-11-17 08:28:51');
+(16, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '4 Spoonstreet', 'Melbourne', 'VIC', '4000', 'mkenzienguyen@gmail.com', '0983045486', 'python_programming_language, data_science', '', 'New', '2025-11-17 08:28:51'),
+(17, 6, 'DA24B', 'Duong', 'Nguyen', '2000-10-10', '', '1 Spoonstreet', 'Melbourne', 'VIC', '1321', 'mkenzienguyen@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'New', '2025-11-17 09:29:44'),
+(18, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '1 Spoonstreet', 'Melb', 'VIC', '1000', 'mkenzienguyen@gmail.com', '098340283', 'python_programming_language, data_science', '', 'Accepted', '2025-11-17 09:31:37'),
+(19, 6, 'DA24B', 'Khanh', 'Nguyen', '2000-10-25', '', '1 Springfield', 'fsuburb', 'VIC', '3000', 'hungphan@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'Interview Scheduled', '2025-11-17 09:38:04');
 
 -- --------------------------------------------------------
 
@@ -258,7 +261,11 @@ CREATE TABLE `managers` (
 
 INSERT INTO `managers` (`manager_id`, `username`, `password`, `email`, `full_name`, `failed_attempts`, `locked_until`, `created_at`, `last_login`) VALUES
 (1, 'admin', '$2y$10$bXJYZFB4BkoC3QqH9K8vAeHN9sn6rKXGN7vP8J0tM1hVx.6OP6nLi', 'admin@epass.com', 'System Administrator', 3, '2025-11-16 16:47:10', '2025-11-16 15:27:41', NULL),
-(2, 'admin123', '$2y$10$Jwa71q5w/TayNH2z1ZHupuKbHtiqLXByZ7VRs3LCkW5kUojDAa9OW', 'admin@hr.com', 'admin yo', 0, NULL, '2025-11-16 15:38:15', '2025-11-16 16:15:23');
+(2, 'admin123', '$2y$10$Jwa71q5w/TayNH2z1ZHupuKbHtiqLXByZ7VRs3LCkW5kUojDAa9OW', 'admin@hr.com', 'admin yo', 0, NULL, '2025-11-16 15:38:15', '2025-11-17 11:16:48'),
+(3, 'kenzienguyen', '$2y$10$TQWYB81Xh99yaLDhZX8eCeYQR8st9GdevoML6U22oqdibaLfb1gCC', 'mkenzienguyen@gmail.com', 'Duong', 0, NULL, '2025-11-17 10:05:43', '2025-11-17 10:05:58'),
+(4, 'kenzienguyen22', '$2y$10$V.Wd8xDFP9lRylm0gsX7jenwHmuhUesLxQ03smt1uw9.AdKuxUT8a', 'kenzienguyen25@gmail.com', 'Duong', 0, NULL, '2025-11-17 10:18:24', NULL),
+(5, '24020103', '$2y$10$hR23Oe5oUYUSyO7W/qVwiupCkkQUtFkNcSo59s4fbNkbnlMR7vjFO', 'i_love_web_development@swinburne.com', 'Duong Nguyen', 0, NULL, '2025-11-17 10:20:05', NULL),
+(6, 'mkenzoe', '$2y$10$VrLX7r2bn.dkSqJu5xGpNu/V/YC4uX.U4i/tq9pmuRWabW4IP.Uo2', 'kenzoe@gmail.com', 'Kenzoe', 0, NULL, '2025-11-17 10:40:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,7 +310,33 @@ INSERT INTO `manager_activity_log` (`log_id`, `manager_id`, `action_type`, `acti
 (21, 2, 'login', 'Successful login', '::1', '2025-11-16 16:15:23'),
 (22, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-16 16:15:46'),
 (23, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-16 16:28:09'),
-(24, 2, 'logout', 'Logged out', '::1', '2025-11-17 08:28:02');
+(24, 2, 'logout', 'Logged out', '::1', '2025-11-17 08:28:02'),
+(25, 2, 'login', 'Successful login', '::1', '2025-11-17 09:19:50'),
+(26, 2, 'logout', 'Logged out', '::1', '2025-11-17 09:23:42'),
+(27, 2, 'login', 'Successful login', '::1', '2025-11-17 09:26:11'),
+(28, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 09:26:29'),
+(29, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 09:26:36'),
+(30, 2, 'update', 'Updated status for EOI 11 to: Interview Scheduled', NULL, '2025-11-17 09:26:58'),
+(31, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 09:27:09'),
+(32, 2, 'query', 'Viewed EOIs for job: DA24B', NULL, '2025-11-17 09:27:23'),
+(33, 2, 'query', 'Viewed EOIs for job: DA24B', NULL, '2025-11-17 09:27:29'),
+(34, 2, 'query', 'Searched by name: Duong ', NULL, '2025-11-17 09:27:48'),
+(35, 2, 'query', 'Viewed EOIs for job: DA24B', NULL, '2025-11-17 09:27:56'),
+(36, 2, 'query', 'Viewed EOIs for job: ML24C', NULL, '2025-11-17 09:28:01'),
+(37, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 09:28:09'),
+(38, 2, 'logout', 'Logged out', '::1', '2025-11-17 09:28:19'),
+(39, 2, 'login', 'Successful login', '::1', '2025-11-17 10:02:48'),
+(40, 2, 'logout', 'Logged out', '::1', '2025-11-17 10:03:03'),
+(41, 3, 'login', 'Successful login', '::1', '2025-11-17 10:05:58'),
+(42, 3, 'logout', 'Logged out', '::1', '2025-11-17 10:06:05'),
+(43, 2, 'login', 'Successful login', '::1', '2025-11-17 11:13:40'),
+(44, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 11:13:46'),
+(45, 2, 'update', 'Updated status for EOI 19 to: Interview Scheduled', NULL, '2025-11-17 11:13:56'),
+(46, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 11:14:01'),
+(47, 2, 'update', 'Updated status for EOI 18 to: Accepted', NULL, '2025-11-17 11:14:08'),
+(48, 2, 'logout', 'Logged out', '::1', '2025-11-17 11:14:12'),
+(49, 2, 'login', 'Successful login', '::1', '2025-11-17 11:16:48'),
+(50, 2, 'logout', 'Logged out', '::1', '2025-11-17 11:16:53');
 
 -- --------------------------------------------------------
 
@@ -328,7 +361,35 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
 (3, 'kenzienguyen', 'kenzienguyenz@gmail.com', 'kenzienguyen'),
 (4, 'lmao', 'lmao@lmao.com', '$2y$10$K7Lh33mupMcd132ywXu/mOwI94ejoXTRl6P7CCk9MS6AEX3CJP1o6'),
 (5, 'lmaojk', 'lmaojk@gmail.com', '$2y$10$ZPBgtcRq5AJHf.jrQ29cyO7R401j9cfUw6DN9QxrUmwqt8pRB8ltK'),
-(6, 'mkenzie', 'mkenzienguyen@gmail.com', '$2y$10$JbsFWA2esOKIzLgWbjGdDOSH8C4LVIL9Pdw2Wo/EOsXYXVVB.Quca');
+(6, 'mkenzie', 'mkenzienguyen@gmail.com', '$2y$10$JbsFWA2esOKIzLgWbjGdDOSH8C4LVIL9Pdw2Wo/EOsXYXVVB.Quca'),
+(7, 'kenzielmao', 'kenznguyenlmao@gmail.com', '$2y$10$Cj2zbdszr2jY5AkGi4jDLusIOJv62DiMboxbN1oNwmcBwu1c1Q97S'),
+(8, 'idkman', 'idklol@man.com', '$2y$10$G/75XYGS.j/jfrSzj/koNujVzv7gNvAQOwuFXLhmzr6/KvVP5iPhC');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_activity`
+--
+
+CREATE TABLE `user_activity` (
+  `log_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `activity_type` varchar(50) NOT NULL,
+  `activity_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_activity`
+--
+
+INSERT INTO `user_activity` (`log_id`, `user_id`, `activity_type`, `activity_time`) VALUES
+(1, NULL, 'logout', 2147483647),
+(2, 6, 'logout', 2147483647),
+(3, 6, 'logout', 2147483647),
+(4, 7, 'logout', 2147483647),
+(5, 6, 'logout', 2147483647),
+(6, 6, 'logout', 2147483647),
+(7, 6, 'logout', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -388,6 +449,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `user_activity`
+--
+ALTER TABLE `user_activity`
+  ADD PRIMARY KEY (`log_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -395,7 +462,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -419,19 +486,25 @@ ALTER TABLE `job_responsibilities`
 -- AUTO_INCREMENT for table `managers`
 --
 ALTER TABLE `managers`
-  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `manager_activity_log`
 --
 ALTER TABLE `manager_activity_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `user_activity`
+--
+ALTER TABLE `user_activity`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

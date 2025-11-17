@@ -162,13 +162,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register_manager'])) {
                 <div class="form-group">
                     <label for="password">Password *</label>
                     <input type="password" id="password" name="password" required>
-                    <div class="password-requirements">
-                        Password must contain:<br>
-                        • At least 8 characters<br>
-                        • One uppercase letter (A-Z)<br>
-                        • One lowercase letter (a-z)<br>
-                        • One number (0-9)<br>
-                        • One special character (@$!%*?&#)
+                    <div><ul class="password-requirements">
+
+                      <li id="rule-length">At least 8 characters</li>
+                      <li id="rule-upper">One uppercase letter (A-Z)</li>
+                      <li id="rule-lower">One lowercase letter (a-z)</li>
+                      <li id="rule-number">One number (0-9)</li>
+                      <li id="rule-special">One special character (@$!%*?&#)</li>
+                    </ul>
                     </div>
                 </div>
                 
@@ -185,5 +186,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register_manager'])) {
             </div>
         </div>
     </div>
+
+    <script>
+    const password = document.getElementById("password");
+
+    password.addEventListener("input", () => {
+    const val = password.value;
+
+    // Rules for password
+    toggleRule("rule-length", val.length >= 8);
+    toggleRule("rule-upper", /[A-Z]/.test(val));
+    toggleRule("rule-lower", /[a-z]/.test(val));
+    toggleRule("rule-number", /[0-9]/.test(val));
+    toggleRule("rule-special", /[@$!%*?&#]/.test(val));
+    });
+
+    function toggleRule(id, isValid) {
+    const element = document.getElementById(id);
+    if (isValid) {
+        element.classList.add("valid");
+        element.classList.remove("invalid");
+    } else {
+        element.classList.add("invalid");
+        element.classList.remove("valid");
+    }
+}
+</script>
 </body>
 </html>
