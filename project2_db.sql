@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2025 at 12:20 PM
+-- Generation Time: Nov 17, 2025 at 03:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,7 +58,7 @@ INSERT INTO `eoi` (`EOInumber`, `user_id`, `jobref`, `Fname`, `Lname`, `dob`, `g
 (13, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:04:05'),
 (14, NULL, 'SE24A', 'fdsfasdf', 'fsafdasf', '2000-10-10', '', 'fsdfasdf', 'fdsafadsf', 'VIC', '4000', 'fdsafds@gmail.com', '12312312321', 'python_programming_language, data_science', '', 'New', '2025-11-16 17:24:25'),
 (15, NULL, 'SE24A', 'Duong', 'Nguyen', '2000-10-25', '', '1 Spoonstreet', 'Melbourne', 'VIC', '1321', 'mkenzienguyen@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'New', '2025-11-17 07:55:44'),
-(16, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '4 Spoonstreet', 'Melbourne', 'VIC', '4000', 'mkenzienguyen@gmail.com', '0983045486', 'python_programming_language, data_science', '', 'New', '2025-11-17 08:28:51'),
+(16, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '4 Spoonstreet', 'Melbourne', 'VIC', '4000', 'mkenzienguyen@gmail.com', '0983045486', 'python_programming_language, data_science', '', 'Under Review', '2025-11-17 08:28:51'),
 (17, 6, 'DA24B', 'Duong', 'Nguyen', '2000-10-10', '', '1 Spoonstreet', 'Melbourne', 'VIC', '1321', 'mkenzienguyen@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'New', '2025-11-17 09:29:44'),
 (18, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '1 Spoonstreet', 'Melb', 'VIC', '1000', 'mkenzienguyen@gmail.com', '098340283', 'python_programming_language, data_science', '', 'Accepted', '2025-11-17 09:31:37'),
 (19, 6, 'DA24B', 'Khanh', 'Nguyen', '2000-10-25', '', '1 Springfield', 'fsuburb', 'VIC', '3000', 'hungphan@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'Interview Scheduled', '2025-11-17 09:38:04');
@@ -235,7 +235,8 @@ CREATE TABLE `login_attempts` (
 INSERT INTO `login_attempts` (`id`, `ip_address`, `time_count`) VALUES
 (5, '127.0.0.1', 1763234443),
 (6, '127.0.0.1', 1763234449),
-(7, '127.0.0.1', 1763234452);
+(7, '127.0.0.1', 1763234452),
+(0, '::1', 1763385618);
 
 -- --------------------------------------------------------
 
@@ -261,11 +262,12 @@ CREATE TABLE `managers` (
 
 INSERT INTO `managers` (`manager_id`, `username`, `password`, `email`, `full_name`, `failed_attempts`, `locked_until`, `created_at`, `last_login`) VALUES
 (1, 'admin', '$2y$10$bXJYZFB4BkoC3QqH9K8vAeHN9sn6rKXGN7vP8J0tM1hVx.6OP6nLi', 'admin@epass.com', 'System Administrator', 3, '2025-11-16 16:47:10', '2025-11-16 15:27:41', NULL),
-(2, 'admin123', '$2y$10$Jwa71q5w/TayNH2z1ZHupuKbHtiqLXByZ7VRs3LCkW5kUojDAa9OW', 'admin@hr.com', 'admin yo', 0, NULL, '2025-11-16 15:38:15', '2025-11-17 11:16:48'),
+(2, 'admin123', '$2y$10$Jwa71q5w/TayNH2z1ZHupuKbHtiqLXByZ7VRs3LCkW5kUojDAa9OW', 'admin@hr.com', 'admin yo', 0, NULL, '2025-11-16 15:38:15', '2025-11-17 13:15:31'),
 (3, 'kenzienguyen', '$2y$10$TQWYB81Xh99yaLDhZX8eCeYQR8st9GdevoML6U22oqdibaLfb1gCC', 'mkenzienguyen@gmail.com', 'Duong', 0, NULL, '2025-11-17 10:05:43', '2025-11-17 10:05:58'),
 (4, 'kenzienguyen22', '$2y$10$V.Wd8xDFP9lRylm0gsX7jenwHmuhUesLxQ03smt1uw9.AdKuxUT8a', 'kenzienguyen25@gmail.com', 'Duong', 0, NULL, '2025-11-17 10:18:24', NULL),
 (5, '24020103', '$2y$10$hR23Oe5oUYUSyO7W/qVwiupCkkQUtFkNcSo59s4fbNkbnlMR7vjFO', 'i_love_web_development@swinburne.com', 'Duong Nguyen', 0, NULL, '2025-11-17 10:20:05', NULL),
-(6, 'mkenzoe', '$2y$10$VrLX7r2bn.dkSqJu5xGpNu/V/YC4uX.U4i/tq9pmuRWabW4IP.Uo2', 'kenzoe@gmail.com', 'Kenzoe', 0, NULL, '2025-11-17 10:40:26', NULL);
+(6, 'mkenzoe', '$2y$10$VrLX7r2bn.dkSqJu5xGpNu/V/YC4uX.U4i/tq9pmuRWabW4IP.Uo2', 'kenzoe@gmail.com', 'Kenzoe', 0, NULL, '2025-11-17 10:40:26', NULL),
+(7, 'hrmanagerlolmaolmao', '$2y$10$IRQRHLkt/VrBKlX2fHppNuoDc1J22RlzDjC4NUur59oluG4wfATlC', 'hungphan@gmail.com', 'Admin Nguyen', 0, NULL, '2025-11-17 14:05:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -336,7 +338,31 @@ INSERT INTO `manager_activity_log` (`log_id`, `manager_id`, `action_type`, `acti
 (47, 2, 'update', 'Updated status for EOI 18 to: Accepted', NULL, '2025-11-17 11:14:08'),
 (48, 2, 'logout', 'Logged out', '::1', '2025-11-17 11:14:12'),
 (49, 2, 'login', 'Successful login', '::1', '2025-11-17 11:16:48'),
-(50, 2, 'logout', 'Logged out', '::1', '2025-11-17 11:16:53');
+(50, 2, 'logout', 'Logged out', '::1', '2025-11-17 11:16:53'),
+(51, 2, 'login', 'Successful login', '::1', '2025-11-17 11:59:09'),
+(52, 2, 'logout', 'Logged out', '::1', '2025-11-17 12:33:41'),
+(53, 2, 'login', 'Successful login', '::1', '2025-11-17 12:36:57'),
+(54, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 12:42:09'),
+(55, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 12:42:25'),
+(56, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 12:42:39'),
+(57, 2, 'update', 'Updated status for EOI 16 to: Under Review', NULL, '2025-11-17 12:43:38'),
+(58, 2, 'login', 'Successful login', '::1', '2025-11-17 13:15:31'),
+(59, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:15:41'),
+(60, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:15:46'),
+(61, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:26:53'),
+(62, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:30:30'),
+(63, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:30:35'),
+(64, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:30:43'),
+(65, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:30:48'),
+(66, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:30:55'),
+(67, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:47:04'),
+(68, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:47:32'),
+(69, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:48:09'),
+(70, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:49:41'),
+(71, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:50:06'),
+(72, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:50:10'),
+(73, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-17 13:50:19'),
+(74, 2, 'logout', 'Logged out', '::1', '2025-11-17 13:59:52');
 
 -- --------------------------------------------------------
 
@@ -389,7 +415,9 @@ INSERT INTO `user_activity` (`log_id`, `user_id`, `activity_type`, `activity_tim
 (4, 7, 'logout', 2147483647),
 (5, 6, 'logout', 2147483647),
 (6, 6, 'logout', 2147483647),
-(7, 6, 'logout', 2147483647);
+(7, 6, 'logout', 2147483647),
+(8, 6, 'logout', 2147483647),
+(9, 6, 'logout', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -428,6 +456,7 @@ ALTER TABLE `job_responsibilities`
 ALTER TABLE `managers`
   ADD PRIMARY KEY (`manager_id`),
   ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `idx_username` (`username`),
   ADD KEY `idx_locked` (`locked_until`);
 
@@ -486,13 +515,13 @@ ALTER TABLE `job_responsibilities`
 -- AUTO_INCREMENT for table `managers`
 --
 ALTER TABLE `managers`
-  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `manager_activity_log`
 --
 ALTER TABLE `manager_activity_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -504,7 +533,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_activity`
 --
 ALTER TABLE `user_activity`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

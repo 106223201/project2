@@ -34,7 +34,7 @@ if (empty($username) || empty($password)) {
 }
 
 $ip_address = getUserIP();
-$time = time() - 60;
+$time = time() - 900;
 
 $check_attempts_query = "SELECT * FROM login_attempts WHERE ip_address = ? AND time_count > ?";
 $stmt_attempts = mysqli_prepare($conn, $check_attempts_query);
@@ -45,7 +45,7 @@ $check_attempts = mysqli_num_rows($result_attempts);
 mysqli_stmt_close($stmt_attempts);
 
 if ($check_attempts >= 3) {
-    $_SESSION['login_errors'] = ["Too many failed login attempts. Please try again after one minute."];
+    $_SESSION['login_errors'] = ["Too many failed login attempts. Please try again after 15 minutes."];
     mysqli_close($conn);
     header("Location: login-register.php");
     exit();
