@@ -33,7 +33,7 @@ $manager_name = $is_manager_logged_in ? $_SESSION['manager_name'] : '';
 
 <style>
 #manager-nav {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #28457aff 0%, #153872ff 100%);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
@@ -106,7 +106,7 @@ $manager_name = $is_manager_logged_in ? $_SESSION['manager_name'] : '';
 }
 
 .logout-btn {
-    background: #f44336;
+    background: #bd1004ff;
     color: white;
     padding: 8px 20px;
     border-radius: 6px;
@@ -116,7 +116,7 @@ $manager_name = $is_manager_logged_in ? $_SESSION['manager_name'] : '';
 }
 
 .logout-btn:hover {
-    background: #d32f2f;
+    background: #a40505ff;
     transform: translateY(-2px);
 }
 

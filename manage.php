@@ -282,17 +282,18 @@ $stats = mysqli_fetch_assoc($stats_result);
             <div class="query-grid">
                 <!-- List All EOIs -->
                 <div class="query-card">
-                    <h3>📋 View All Applications</h3>
+                    <h3>View All Applications</h3>
                     <p>Display all Expression of Interest submissions</p>
                     <form method="GET" action="manage.php">
                         <input type="hidden" name="query" value="all">
+                        <br><br><br>
                         <button type="submit" class="btn btn-primary">View All</button>
                     </form>
                 </div>
                 
                 <!-- Search by Job Reference -->
                 <div class="query-card">
-                    <h3>🎯 Search by Job Reference</h3>
+                    <h3>Search by Job Reference</h3>
                     <form method="GET" action="manage.php">
                         <input type="hidden" name="query" value="by_job">
                         <select name="jobref" required>
@@ -303,13 +304,14 @@ $stats = mysqli_fetch_assoc($stats_result);
                             <option value="CE24D">CE24D (Cloud Engineer)</option>
                         </select>
                         <br>
+                        <br><br>
                         <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                 </div>
                 
                 <!-- Search by Name -->
                 <div class="query-card">
-                    <h3>👤 Search by Applicant Name</h3>
+                    <h3>Search by Applicant Name</h3>
                     <form method="GET" action="manage.php">
                         <input type="hidden" name="query" value="by_name">
                         <input type="text" name="fname" placeholder="First Name">
@@ -321,7 +323,7 @@ $stats = mysqli_fetch_assoc($stats_result);
                 
                 <!-- Delete by Job Reference -->
                 <div class="query-card danger">
-                    <h3>🗑️ Delete Applications by Job</h3>
+                    <h3>Delete Applications by Job</h3>
                     <p class="warning">⚠️ This action cannot be undone!</p>
                     <form method="POST" action="manage.php" onsubmit="return confirm('Are you sure you want to delete all applications for this job?');">
                         <select name="delete_jobref" required>

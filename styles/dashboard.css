@@ -96,12 +96,12 @@ body {
     font-size: 0.9rem;
 }
 
-.stat-card.total { border-left: 4px solid #3f51b5; }
-.stat-card.new { border-left: 4px solid #2196f3; }
-.stat-card.review { border-left: 4px solid #ff9800; }
-.stat-card.interview { border-left: 4px solid #9c27b0; }
-.stat-card.accepted { border-left: 4px solid #4caf50; }
-.stat-card.rejected { border-left: 4px solid #f44336; }
+.stat-card.total { border-left: 4px solid #3748a7; }
+.stat-card.new { border-left: 4px solid #0059a2; }
+.stat-card.review { border-left: 4px solid #985c01; }
+.stat-card.interview { border-left: 4px solid #550b62; }
+.stat-card.accepted { border-left: 4px solid #0a560d; }
+.stat-card.rejected { border-left: 4px solid #870f07; }
 
 /* Profile Section */
 .profile-section {

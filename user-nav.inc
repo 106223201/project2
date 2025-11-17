@@ -115,7 +115,7 @@ $username = $is_logged_in ? getCurrentUsername() : '';
 }
 
 .logout-btn {
-    background: #fa1807ff;
+    background: #bd1004ff;
     color: white;
     padding: 8px 20px;
     border-radius: 6px;
@@ -126,7 +126,7 @@ $username = $is_logged_in ? getCurrentUsername() : '';
 }
 
 .logout-btn:hover {
-    background: #d32f2f;
+    background: #b30202ff;
     transform: translateY(-2px);
 }
 
