@@ -249,6 +249,10 @@ mysqli_close($conn);
                 </div>
             <?php endif; ?>
         </div>
+        <br><br>
+        <p>&copy; 2025 ePass Software. All rights reserved.</p>
+
     </div>
+    
 </body>
 </html>

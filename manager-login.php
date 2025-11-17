@@ -140,6 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login_manager'])) {
                 <a href="manager-register.php">Don't have an account? Register</a>
                 <a href="index.php" class="home-link">← Back to Home</a>
             </div>
+        
         </div>
     </div>
 </body>

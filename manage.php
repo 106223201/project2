@@ -423,7 +423,9 @@ $stats = mysqli_fetch_assoc($stats_result);
                 </div>
             </div>
         <?php endif; ?>
-    </div>
+        <p>&copy; 2025 ePass Software. All rights reserved.</p>
+    </div>            
+                  
 </body>
 </html>
 
