@@ -36,6 +36,11 @@ $username = getCurrentUsername();
 </nav>
 
 <style>
+    nav {
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+    }
     .user-menu {
         display: flex;
         align-items: center;

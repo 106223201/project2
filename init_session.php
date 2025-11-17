@@ -1,7 +1,6 @@
 <?php
 /**
- * Session Initialization File
- * Include this at the top of every page that needs session access
+ * Session initialization file
  */
 
 // Configure session settings before starting

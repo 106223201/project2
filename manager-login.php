@@ -1,3 +1,5 @@
+<!-- Consulted Claude AI on the interface and password security logic used in this part of the project. -->
+
 <?php
 require_once('init_session.php');
 require_once('settings.php');

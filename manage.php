@@ -1,3 +1,5 @@
+<!-- Consulted Claude AI on the interface and icons used in this project. -->
+
 <?php
 require_once('init_session.php');
 require_once('settings.php');

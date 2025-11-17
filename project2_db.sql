@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2025 at 06:36 PM
+-- Generation Time: Nov 17, 2025 at 09:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `eoi` (
   `EOInumber` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `jobref` varchar(5) NOT NULL,
   `Fname` varchar(20) NOT NULL,
   `Lname` varchar(20) NOT NULL,
@@ -43,20 +44,21 @@ CREATE TABLE `eoi` (
   `skills` varchar(200) NOT NULL,
   `otherskills` text NOT NULL,
   `status` enum('New','Under Review','Interview Scheduled','Accepted','Rejected') DEFAULT 'New',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `user_id` int(11) DEFAULT NULL
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `eoi`
 --
 
-INSERT INTO `eoi` (`EOInumber`, `jobref`, `Fname`, `Lname`, `dob`, `gender`, `street`, `suburbtown`, `state`, `postcode`, `email`, `phone`, `skills`, `otherskills`, `status`, `created_at`, `user_id`) VALUES
-(4, 'ML24C', 'Hung', 'Nguyen', '', 'Male', '1 Spoonstreet', 'Melbourne', 'NSW', '1234', 'hungphan@gmail.com', '021234543534', 'python_programming_language, data_science, cyber_security, project_management', '', 'New', '2025-11-16 15:51:28', NULL),
-(11, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 15:59:50', NULL),
-(12, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:03:57', NULL),
-(13, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:04:05', NULL),
-(14, 'SE24A', 'fdsfasdf', 'fsafdasf', '2000-10-10', '', 'fsdfasdf', 'fdsafadsf', 'VIC', '4000', 'fdsafds@gmail.com', '12312312321', 'python_programming_language, data_science', '', 'New', '2025-11-16 17:24:25', NULL);
+INSERT INTO `eoi` (`EOInumber`, `user_id`, `jobref`, `Fname`, `Lname`, `dob`, `gender`, `street`, `suburbtown`, `state`, `postcode`, `email`, `phone`, `skills`, `otherskills`, `status`, `created_at`) VALUES
+(4, NULL, 'ML24C', 'Hung', 'Nguyen', '', 'Male', '1 Spoonstreet', 'Melbourne', 'NSW', '1234', 'hungphan@gmail.com', '021234543534', 'python_programming_language, data_science, cyber_security, project_management', '', 'New', '2025-11-16 15:51:28'),
+(11, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 15:59:50'),
+(12, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:03:57'),
+(13, NULL, 'ML24C', 'Duong', 'Nguyen', '2000-10-10', '', 'ftown', 'fsuburb', 'VIC', '3000', 'kenzienguyen@gmail.com', '0212345435', 'python_programming_language, data_science, cyber_security', 'cooking', 'New', '2025-11-16 16:04:05'),
+(14, NULL, 'SE24A', 'fdsfasdf', 'fsafdasf', '2000-10-10', '', 'fsdfasdf', 'fdsafadsf', 'VIC', '4000', 'fdsafds@gmail.com', '12312312321', 'python_programming_language, data_science', '', 'New', '2025-11-16 17:24:25'),
+(15, NULL, 'SE24A', 'Duong', 'Nguyen', '2000-10-25', '', '1 Spoonstreet', 'Melbourne', 'VIC', '1321', 'mkenzienguyen@gmail.com', '0983458302', 'python_programming_language, data_science', '', 'New', '2025-11-17 07:55:44'),
+(16, 6, 'CE24D', 'Duong', 'Nguyen', '2000-10-10', '', '4 Spoonstreet', 'Melbourne', 'VIC', '4000', 'mkenzienguyen@gmail.com', '0983045486', 'python_programming_language, data_science', '', 'New', '2025-11-17 08:28:51');
 
 -- --------------------------------------------------------
 
@@ -230,9 +232,7 @@ CREATE TABLE `login_attempts` (
 INSERT INTO `login_attempts` (`id`, `ip_address`, `time_count`) VALUES
 (5, '127.0.0.1', 1763234443),
 (6, '127.0.0.1', 1763234449),
-(7, '127.0.0.1', 1763234452),
-(0, '::1', 1763314052),
-(0, '::1', 1763314068);
+(7, '127.0.0.1', 1763234452);
 
 -- --------------------------------------------------------
 
@@ -302,7 +302,8 @@ INSERT INTO `manager_activity_log` (`log_id`, `manager_id`, `action_type`, `acti
 (20, 2, 'logout', 'Logged out', '::1', '2025-11-16 16:12:07'),
 (21, 2, 'login', 'Successful login', '::1', '2025-11-16 16:15:23'),
 (22, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-16 16:15:46'),
-(23, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-16 16:28:09');
+(23, 2, 'query', 'Viewed all EOIs', NULL, '2025-11-16 16:28:09'),
+(24, 2, 'logout', 'Logged out', '::1', '2025-11-17 08:28:02');
 
 -- --------------------------------------------------------
 
@@ -311,6 +312,7 @@ INSERT INTO `manager_activity_log` (`log_id`, `manager_id`, `action_type`, `acti
 --
 
 CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
@@ -320,12 +322,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `email`, `password`) VALUES
-('idk', 'idk@man.com', 'idkmanlol'),
-('kenzie', 'kenzienguyen@gmail.com', 'kenzienguyen'),
-('kenzienguyen', 'kenzienguyenz@gmail.com', 'kenzienguyen'),
-('lmao', 'lmao@lmao.com', '$2y$10$K7Lh33mupMcd132ywXu/mOwI94ejoXTRl6P7CCk9MS6AEX3CJP1o6'),
-('lmaojk', 'lmaojk@gmail.com', '$2y$10$ZPBgtcRq5AJHf.jrQ29cyO7R401j9cfUw6DN9QxrUmwqt8pRB8ltK');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
+(1, 'idk', 'idk@man.com', 'idkmanlol'),
+(2, 'kenzie', 'kenzienguyen@gmail.com', 'kenzienguyen'),
+(3, 'kenzienguyen', 'kenzienguyenz@gmail.com', 'kenzienguyen'),
+(4, 'lmao', 'lmao@lmao.com', '$2y$10$K7Lh33mupMcd132ywXu/mOwI94ejoXTRl6P7CCk9MS6AEX3CJP1o6'),
+(5, 'lmaojk', 'lmaojk@gmail.com', '$2y$10$ZPBgtcRq5AJHf.jrQ29cyO7R401j9cfUw6DN9QxrUmwqt8pRB8ltK'),
+(6, 'mkenzie', 'mkenzienguyen@gmail.com', '$2y$10$JbsFWA2esOKIzLgWbjGdDOSH8C4LVIL9Pdw2Wo/EOsXYXVVB.Quca');
 
 --
 -- Indexes for dumped tables
@@ -380,7 +383,7 @@ ALTER TABLE `manager_activity_log`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`username`),
+  ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `username` (`username`);
 
@@ -392,7 +395,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -422,7 +425,13 @@ ALTER TABLE `managers`
 -- AUTO_INCREMENT for table `manager_activity_log`
 --
 ALTER TABLE `manager_activity_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

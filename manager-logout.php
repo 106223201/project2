@@ -1,3 +1,5 @@
+<!-- Consult ClaudeAI on logging out of more advanced session logout -->
+
 <?php
 require_once('init_session.php');
 require_once('settings.php');

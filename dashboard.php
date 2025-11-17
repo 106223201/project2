@@ -13,8 +13,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$user_id = getCurrentUserId();
-$username = getCurrentUsername();
+// $user_id = getCurrentUserId();
+// $username = getCurrentUsername();
+$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
 $user_email = $_SESSION['user_email'];
 
 // Handle claiming unclaimed applications
