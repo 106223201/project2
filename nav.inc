@@ -1,8 +1,6 @@
-<nav>
 <?php
 // Initialize session
 require_once('init_session.php');
-require_once('settings.php');
 
 // Get login status
 $username = getCurrentUsername();
@@ -41,15 +39,15 @@ $username = getCurrentUsername();
     .user-menu {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 0.01rem;
+        margin-left: 1.5rem;
     }
     
     .username-display {
-        color: #333;
+        color: white;
         font-weight: 600;
-        padding: 8px 15px;
-        background: #f0f0f0;
-        border-radius: 20px;
+        padding: 8px 8px;
+        background: transparent;
         font-size: 0.9rem;
     }
     
@@ -63,15 +61,36 @@ $username = getCurrentUsername();
     }
     
     @media (max-width: 768px) {
+
+        .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
         .user-menu {
             flex-direction: column;
             width: 100%;
-            gap: 10px;
+            gap: 15px;
+            margin-left:0;
         }
         
         .username-display {
-            width: 100%;
+            width: auto;
             text-align: center;
+            justify-content: center;
         }
+
+        .logout-btn {
+        width: auto;
+        text-align: center;
+    }
+
     }
 </style>

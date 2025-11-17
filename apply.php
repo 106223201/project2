@@ -1,6 +1,14 @@
 
 <?php
 session_start();
+require_once('init_session.php');
+
+// Redirect to login if not logged in
+if (!isUserLoggedIn()) {
+    $_SESSION['redirect_after_login'] = 'apply.php';
+    header("Location: login-register.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,3 @@
-
-
 <?php
 // Initialize session
 require_once('init_session.php');
@@ -25,6 +23,7 @@ $username = $is_logged_in ? getCurrentUsername() : '';
             <?php if ($is_logged_in): ?>
                 <li><a href="dashboard.php" class="nav-link active-link">Dashboard</a></li>
                 <li><a href="apply.php" class="nav-link">Apply</a></li>
+                <br>
                 <li class="user-menu">
                     <span class="username-display">👤 <?php echo htmlspecialchars($username); ?></span>
                     <a href="logout.php" class="logout-btn">Logout</a>
@@ -37,8 +36,9 @@ $username = $is_logged_in ? getCurrentUsername() : '';
 </nav>
 
 <style>
+
 #user-nav {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #0b0625ef;  
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
@@ -102,7 +102,7 @@ $username = $is_logged_in ? getCurrentUsername() : '';
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-left: 10px;
+    margin-left: 2rem;
 }
 
 .username-display {
@@ -115,7 +115,7 @@ $username = $is_logged_in ? getCurrentUsername() : '';
 }
 
 .logout-btn {
-    background: #f44336;
+    background: #fa1807ff;
     color: white;
     padding: 8px 20px;
     border-radius: 6px;
@@ -144,13 +144,20 @@ $username = $is_logged_in ? getCurrentUsername() : '';
     }
     
     .user-menu {
-        flex-direction: column;
         width: 100%;
+        justify-content: center;
+        margin-left:0;
+        gap:15px;
     }
     
-    .username-display,
+    .username-display {
+        width:auto;
+        text-align: center;
+        justify-content: center;
+    }
+
     .logout-btn {
-        width: 100%;
+        width: auto;
         text-align: center;
     }
 }

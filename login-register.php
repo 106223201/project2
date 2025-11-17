@@ -1,5 +1,14 @@
 <?php
-session_start();
+require_once('init_session.php');
+// require_once('settings.php');
+
+// If already logged in, redirect to jobs page
+if (isUserLoggedIn()) {
+    header("Location: jobs.php");
+    exit();
+}
+
+// session_start();
 
 $registration_errors = isset($_SESSION['registration_errors']) ? $_SESSION['registration_errors'] : [];
 $login_errors = isset($_SESSION['login_errors']) ? $_SESSION['login_errors'] : [];
@@ -46,12 +55,51 @@ unset($_SESSION['success_message']);
             border: 1px solid #c3e6cb;
             font-size: 14px;
         }
+
+    .manager-access-topbar {
+    color: black;
+    padding: 8px 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-radius: 15px;
+}
+
+.manager-access-topbar span {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.manager-access-topbar a {
+    background: white;
+    color: black;
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.manager-access-topbar a:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
     </style>
 </head>
 
 <body>
     <a href="index.php"><img class="logo" src="images/logo.png" alt="logo"></a>
-    <br><br>
+    <br>
+    <div class="manager-access-topbar">
+    <span>👔 HR Manager?</span>
+    <a href="manage.php">Access Management Portal</a>
+    </div>
+
+
+    <br>
     
     <div class="container" id="container">
         <div class="form-container sign-up">

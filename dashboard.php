@@ -15,7 +15,21 @@ if (!$conn) {
 
 $user_id = getCurrentUserId();
 $username = getCurrentUsername();
-$user_email = $_SESSION['email'];
+$user_email = $_SESSION['user_email'];
+
+// Handle claiming unclaimed applications
+if (isset($_POST['claim_eoi']) && $user_id) {
+    $eoi_to_claim = (int)$_POST['claim_eoi'];
+    
+    $claim_query = "UPDATE eoi SET user_id = ? WHERE EOInumber = ? AND user_id IS NULL AND email = ?";
+    $claim_stmt = mysqli_prepare($conn, $claim_query);
+    mysqli_stmt_bind_param($claim_stmt, "iis", $user_id, $eoi_to_claim, $user_email);
+    
+    if (mysqli_stmt_execute($claim_stmt)) {
+        $claim_message = "Application EOI-" . str_pad($eoi_to_claim, 6, '0', STR_PAD_LEFT) . " has been linked to your account!";
+    }
+    mysqli_stmt_close($claim_stmt);
+}
 
 // Get user's applications
 $query = "SELECT * FROM eoi WHERE user_id = ? ORDER BY EOInumber DESC";
@@ -23,8 +37,24 @@ $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
-$applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$applications = [];
+if ($result) {
+    $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
 mysqli_stmt_close($stmt);
+
+// Get unclaimed applications with user's email
+$unclaimed_query = "SELECT * FROM eoi WHERE user_id IS NULL AND email = ? ORDER BY EOInumber DESC";
+$unclaimed_stmt = mysqli_prepare($conn, $unclaimed_query);
+mysqli_stmt_bind_param($unclaimed_stmt, "s", $user_email);
+mysqli_stmt_execute($unclaimed_stmt);
+$unclaimed_result = mysqli_stmt_get_result($unclaimed_stmt);
+$unclaimed_applications = [];
+if ($unclaimed_result) {
+    $unclaimed_applications = mysqli_fetch_all($unclaimed_result, MYSQLI_ASSOC);
+}
+mysqli_stmt_close($unclaimed_stmt);
 
 // Get statistics for this user
 $stats_query = "SELECT 
@@ -41,6 +71,18 @@ mysqli_stmt_execute($stats_stmt);
 $stats_result = mysqli_stmt_get_result($stats_stmt);
 $stats = mysqli_fetch_assoc($stats_result);
 mysqli_stmt_close($stats_stmt);
+
+// Ensure all stats have values (even if 0)
+if (!$stats) {
+    $stats = [
+        'total' => 0,
+        'new_count' => 0,
+        'review_count' => 0,
+        'interview_count' => 0,
+        'accepted_count' => 0,
+        'rejected_count' => 0
+    ];
+}
 
 mysqli_close($conn);
 ?>

@@ -2,13 +2,20 @@
 session_start();
 require_once('settings.php');
 
+if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
+    header("Location: login-register.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
 // Prevent direct access - redirect if form wasn't submitted
 if (!isset($_POST['save_record'])) {
     header("Location: apply.php");
     exit();
 }
 
-// // Check if user is logged in
+// Check if user is logged in
 // $user_id = getCurrentUserId();
 
 // Connect to database
@@ -321,12 +328,12 @@ if (!empty($errors)) {
 }
 
 // If no errors, insert into database using prepared statement
-$query = "INSERT INTO eoi (jobref, Fname, Lname, dob, gender, street, suburbtown, state, postcode, email, phone, skills, otherskills) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO eoi (user_id, jobref, Fname, Lname, dob, gender, street, suburbtown, state, postcode, email, phone, skills, otherskills) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($conn, $query);
-mysqli_stmt_bind_param($stmt, "sssssssssssss", 
-    $jobref, $firstname, $lastname, $dob_mysql, $gender, 
+mysqli_stmt_bind_param($stmt, "isssssssssssss", 
+    $user_id, $jobref, $firstname, $lastname, $dob_mysql, $gender, 
     $street, $suburb, $state, $postcode, $email, $phone, 
     $skills_select, $otherskills);
 
@@ -430,6 +437,8 @@ if (mysqli_stmt_execute($stmt)) {
             <p>We will review your application and contact you within 5-7 business days.</p>
             
             <div class='button-group'>
+
+                <a href='dashboard.php' class='button dashboard-button'>View Dashboard</a>
                 <a href='index.php' class='button home-button'>🏠 Back to Home</a>
                 <a href='jobs.php' class='button jobs-button'>💼 View More Jobs</a>
             </div>

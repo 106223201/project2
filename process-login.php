@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('init_session.php');
 require_once('settings.php');
 
@@ -68,16 +67,23 @@ if (mysqli_num_rows($result) == 1) {
         mysqli_stmt_execute($delete_stmt);
         mysqli_stmt_close($delete_stmt);
         
-        $_SESSION['user_logged_in'] = true;
+        $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $userData['user_id'];
         $_SESSION['username'] = $userData['username'];
+        $_SESSION['email'] = $userData['email'];
+        // $_SESSION['profile_picture'] = $userData['profile_picture'];
+        $_SESSION['login_time'] = time();
+
+        $_SESSION['user_logged_in'] = true;
         $_SESSION['user_email'] = $userData['email'];
-        $_SESSION['profile_picture'] = $userData['profile_picture'];
+        if (isset($userData['profile_picture'])) {
+            $_SESSION['profile_picture'] = $userData['profile_picture'];
+        }
         
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
         
-        header("Location: index.php");
+        header("Location: dashboard.php");
         exit();
     } else {
         $time = time();
