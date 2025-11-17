@@ -403,6 +403,7 @@ if (mysqli_stmt_execute($stmt)) {
                 transition: all 0.3s;
                 font-weight: 600;
             }
+                
             .home-button {
                 background-color: #3f51b5;
                 color: white;
@@ -419,6 +420,10 @@ if (mysqli_stmt_execute($stmt)) {
             .jobs-button:hover {
                 background-color: #f5f5f5;
                 transform: translateY(-2px);
+            }
+
+            .dashboard-link {
+                text-decoration: none;
             }
         </style>
     </head>
@@ -438,10 +443,12 @@ if (mysqli_stmt_execute($stmt)) {
             
             <div class='button-group'>
 
-                <a href='dashboard.php' class='button dashboard-button'>View Dashboard</a>
                 <a href='index.php' class='button home-button'>🏠 Back to Home</a>
                 <a href='jobs.php' class='button jobs-button'>💼 View More Jobs</a>
             </div>
+            <br>
+            <strong><a href='dashboard.php' class='dashboard-link'>← Back to Dashboard</a></strong>
+
         </div>
     </body>
     </html>";

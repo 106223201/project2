@@ -53,11 +53,11 @@
             <h2 id="dd">Members' Contributions</h2>
             <dl>
                 <dt>Kenzie Duong Nguyen</dt>
-                <dd>Home Page, Navbar, Job Descriptions Page (HTML & CSS), enhancements.php; fixed bugs in members' work (HTML, CSS, PHP)</dd>
+                <dd>Home Page, Navbar, Job Descriptions Page (HTML & CSS), enhanced security, enhancements.php; fixed bugs & improved PHP logical flow of all pages</dd>
                 <dt>Luu Tri Khoa Tung</dt>
                 <dd>Job Application Page, and Home Page (HTML & CSS), process_eoi.php</dd>
                 <dt>Nguyen Tuan Anh</dt>
-                <dd>About page (HTML & CSS), Manage Page (PHP & CSS)</dd>
+                <dd>About page (HTML & CSS), Manager Pages (PHP & CSS)</dd>
             </dl>
         </div>
         <!-- Group photo -->
