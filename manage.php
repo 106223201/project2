@@ -1,4 +1,6 @@
 <!-- Consulted Claude AI on the interface and icons used in this project. -->
+<!-- Prompt: Suggest a couple of emojis and icons and grids view to beautify the following page. Keep the similar style of dashboard.php -->
+<!-- Author: Kenzie Duong Nguyen, Nguyen Tuan Anh -->
 
 <?php
 require_once('init_session.php');
@@ -423,6 +425,7 @@ $stats = mysqli_fetch_assoc($stats_result);
                 </div>
             </div>
         <?php endif; ?>
+        <br>
         <p>&copy; 2025 ePass Software. All rights reserved.</p>
     </div>            
                   

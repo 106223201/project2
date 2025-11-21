@@ -1,3 +1,5 @@
+<!-- Author: Luu Tri Khoa Tung, Kenzie Duong Nguyen -->
+
 <?php
 require_once('init_session.php');
 require_once('settings.php');

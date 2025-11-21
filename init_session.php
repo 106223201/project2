@@ -1,3 +1,5 @@
+<!-- Author: Kenzie Duong Nguyen -->
+
 <?php
 /**
  * Session initialization file

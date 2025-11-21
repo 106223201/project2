@@ -1,3 +1,5 @@
+<!-- Asked Claude AI to check why password_verify did not work for hashed passwords. Turns out we just needed to delete the database and import sql file again for it to work. -->
+ 
 <?php
 require_once('init_session.php');
 // require_once('settings.php');

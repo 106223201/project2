@@ -1,4 +1,6 @@
 <!-- Consulted ClaudeAI on the interface and password security logic used in this part of the project. -->
+<!-- Prompt: Suggest a couple of emojis and icons to beautify the following page. Then suggest color schemes for password criteria check -->
+<!-- Author: Kenzie Duong Nguyen -->
 
 <?php
 require_once('init_session.php');

@@ -1,4 +1,5 @@
-<!-- Consult ClaudeAI on logging out of more advanced session logout -->
+<!-- Consult ClaudeAI on logging out of more advanced session logout. Did not implement the advanced logout time. -->
+<!-- Prompt: Review my codes for logging out of manager account and suggest a preferable logout time. -->
 
 <?php
 require_once('init_session.php');

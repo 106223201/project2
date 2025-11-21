@@ -1,3 +1,7 @@
+<!-- Consulted Claude AI on the emojis and icons used in this part of the project. -->
+<!-- Prompt: Suggest a couple of emojis and icons and grids view to beautify the following page. -->
+<!-- Author: Kenzie Duong Nguyen -->
+
 <?php
 require_once('init_session.php');
 require_once('settings.php');
