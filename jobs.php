@@ -23,7 +23,7 @@
         <main>
         <?php
         // Database connection
-        require_once 'settings.php'; // You'll need to create this file
+        require_once 'settings.php';
         
             // Fetch all jobs
             $sql = "SELECT * FROM jobs ORDER BY job_id";
